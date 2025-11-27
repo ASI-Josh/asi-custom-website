@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us - Hyperglass</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        /* HyperPortal Theme Override for Navigation */
+        .hyperportal-navbar {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+            will-change: transform;
+        }
+        
+        .hyperportal-navbar a {
+            color: #f8fafc !important;
+            font-weight: bold !important;
+            text-decoration: none !important;
+            opacity: 1 !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .hyperportal-navbar a:hover {
+            color: #3b82f6 !important;
+            transform: translateY(-1px);
+        }
+        
+        body {
+            padding-top: 80px;
+        }
+        
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(10px);
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+            z-index: 1001;
+            border-radius: 8px;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            top: 100%;
+            left: 0;
+            margin-top: 0px;
+            padding-top: 5px;
+        }
+        
+        .dropdown-content a {
+            color: #f8fafc !important;
+            padding: 12px 16px !important;
+            text-decoration: none !important;
+            display: block !important;
+            font-weight: bold !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .dropdown-content a:hover {
+            background: rgba(59, 130, 246, 0.1) !important;
+            color: #3b82f6 !important;
+            transform: none !important;
+        }
+        
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
+        }
+        
+        .dropdown-arrow {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="sector-page">
+    <!-- Navigation -->
+    <nav class="navbar hyperportal-navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
+      <div style="flex: 1;"></div>
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <a href="index.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Home</a>
+        <div class="dropdown">
+          <a href="sectors.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important; display: flex; align-items: center;">
+            Sectors
+            <span class="dropdown-arrow" style="font-size: 16px; font-weight: bold;">^</span>
+          </a>
+          <div class="dropdown-content">
+            <a href="mass-transit.html" style="font-weight: bold;">Mass Transit & Fleet</a>
+            <a href="manufacturing.html" style="font-weight: bold;">Manufacturing</a>
+            <a href="wholesale-trade.html" style="font-weight: bold;">Wholesale & Trade</a>
+            <a href="structural.html" style="font-weight: bold;">Structural</a>
+            <a href="marine.html" style="font-weight: bold;">Marine</a>
+          </div>
+        </div>
+        <a href="https://hyperportal.online" target="_blank" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Hyperportal</a>
+        <div style="margin: 0 30px;">
+          <img src="images/hyperglass-logo.png" alt="Hyperglass Logo" class="nav-logo-img">
+        </div>
+        <a href="apeax/index.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Apeax Australia</a>
+        <a href="contact.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Contact</a>
+        <a href="about.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">About Us</a>
+      </div>
+      <div style="flex: 1; display: flex; justify-content: flex-end;">
+        <a href="https://hyperportal.online" target="_blank" style="background: linear-gradient(135deg, #ff8c00, #ff6b00); color: white !important; padding: 14px 28px; border-radius: 25px; text-decoration: none !important; font-weight: bold; font-size: 1rem; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3); border: none;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(255, 140, 0, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(255, 140, 0, 0.3)'">
+          HYPERPORTAL
+        </a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="sector-hero about" style="background: url('images/eurohub-golf-repair.jpg') center top/cover no-repeat; display: flex; align-items: center; justify-content: center; min-height: 60vh; text-align: center; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">
+        <div>
+            <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;">About Us<br>& Our Services</h1>
+            <p style="font-size: 1.3rem; font-weight: 500; margin: 0; max-width: 800px;">Australia's Premier Specialist in Automotive, Structural & Marine Glass Life Extension, Remediation & Films.</p>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section style="padding: 80px 0; background: #f8f9fa;">
+        <div class="container" style="max-width: 2000px; margin: 0 auto; padding: 0 60px;">
+            
+            <!-- Introduction -->
+            <div style="margin-bottom: 60px;">
+                <p style="font-size: 1.2rem; line-height: 1.8; color: #2c3e50; margin-bottom: 30px;">
+                    Founded on the principles of quality, safety and lifecycle optimisation, Hyperglass Innovations is Australia's premier specialist in automotive, marine and structural glass life-extension and remediation. From our origins servicing mass-transit fleets, we have built an end-to-end solutions suite that prolongs asset uptime, minimises total cost of ownership and upholds the strictest ISO (9001, 14001, 45001) and ADR standards.
+                </p>
+            </div>
+
+            <!-- Innovation Section -->
+            <div style="margin-bottom: 60px;">
+                <h2 style="font-size: 2.2rem; color: #2c3e50; font-weight: 600; margin-bottom: 30px; text-align: center;">Our Value-Adding Service<br>& Product Portfolio</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #2c3e50; margin-bottom: 40px; text-align: center;">
+                    Our unwavering commitment to innovation has delivered game-changing platforms and products:
+                </p>
+
+                <!-- Products Grid - 1x4 Layout for first 4, then full width for Xtreme Series -->
+                <div style="display: grid; gap: 30px; max-width: 100%; margin: 0 auto;">
+                    
+                    <!-- Top Row - 1x4 Grid (4 vertical columns) -->
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 60px; margin-bottom: 40px;">
+                        
+                        <!-- HyperPortal -->
+                        <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 40px; border-radius: 16px; border-top: 6px solid #3498db; box-shadow: 0 8px 32px rgba(0,0,0,0.1); border-left: 1px solid rgba(255,255,255,0.2); border-right: 1px solid rgba(255,255,255,0.2); border-bottom: 1px solid rgba(255,255,255,0.2); min-height: 560px; display: flex; flex-direction: column;">
+                            <h3 style="color: #2c3e50; font-size: 1.4rem; font-weight: 600; margin: 0 0 20px 0; text-align: center; height: 40px; display: flex; align-items: center; justify-content: center;">HyperPortal™</h3>
+                            <p style="color: #2c3e50; line-height: 1.6; margin: 0 0 20px 0; font-size: 1rem; text-align: center;">Your secure, cloud-native client dashboard delivering live service tracking, automated digital reporting, AI-driven maintenance forecasts, Custom KPI Dashboards and more, keeping you informed and in control</p>
+                            <ul style="color: #2c3e50; font-size: 0.9rem; line-height: 1.5; margin: 0; padding-left: 20px; text-align: left;">
+                                <li style="margin-bottom: 12px;"><strong>Request New Quote/Repair:</strong> Quickly raise service requests for glass repairs, film installations, coatings & more via an intuitive form. Receive instant confirmation and track progress from quote through to job completion.</li>
+                                <li style="margin-bottom: 12px;"><strong>Live Asset Overview:</strong> View all registered vehicles with the latest GPS stamp, odometer reading and upcoming service due-dates under "Asset Data & Tracking."</li>
+                                <li style="margin-bottom: 12px;"><strong>My Inspections & Jobs:</strong> Track open jobs with live status, ETA and technician name. Download completed reports immediately.</li>
+                                <li style="margin-bottom: 12px;"><strong>Automated Digital Reporting:</strong> Access branded, time-stamped PDF reports and compliance logs as soon as a job is finished via "Job History."</li>
+                                <li style="margin-bottom: 12px;"><strong>My Films & Protection:</strong> Review all active protective-film installations, including type, installation date and warranty terms.</li>
+                                <li style="margin-bottom: 12px;"><strong>HyperGlass AI Assistant:</strong> On the Client Dashboard, receive daily fleet-health insights, industry updates and actionable recommendations.</li>
+                                <li style="margin-bottom: 0;"><strong>Secure Document Vault:</strong> Store and retrieve every past inspection report, service record and warranty certificate, ISO audit-ready and version-controlled.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Glass Remediation & Life-Extension Solutions -->
+                        <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 40px; border-radius: 16px; border-top: 6px solid #f39c12; box-shadow: 0 8px 32px rgba(0,0,0,0.1); border-left: 1px solid rgba(255,255,255,0.2); border-right: 1px solid rgba(255,255,255,0.2); border-bottom: 1px solid rgba(255,255,255,0.2); min-height: 560px; display: flex; flex-direction: column;">
+                            <h3 style="color: #2c3e50; font-size: 1.4rem; font-weight: 600; margin: 0 0 20px 0; text-align: center; height: 40px; display: flex; align-items: center; justify-content: center;">Glass Remediation & Life-Extension Solutions</h3>
+                            <p style="color: #2c3e50; line-height: 1.6; margin: 0 0 20px 0; font-size: 1rem; text-align: center;">All Hyperglass Technicians follow an Advanced, multi-stage nano-abrasive polishing and clearing process that remediates deep-scratches, micro-fissures, swirl marks and hazing to restore OEM-grade optical clarity.</p>
+                            <ul style="color: #2c3e50; font-size: 0.9rem; line-height: 1.5; margin: 0; padding-left: 20px; text-align: left;">
+                                <li style="margin-bottom: 12px;"><strong>Chip & Crack Repairs:</strong> Precision resin injection to stabilise damage, prevent spread & minimize light refraction.</li>
+                                <li style="margin-bottom: 12px;"><strong>Deep Scratch & Swirl-Mark Removal:</strong> Multi-stage nano-abrasive polishing to recover factory-clear finish without affecting optical clarity.</li>
+                                <li style="margin-bottom: 12px;"><strong>Glass Surface Decontamination & Polish:</strong> Removes buildup of deposits, mineral haze, chemical etch and more for a pristine substrate.</li>
+                                <li style="margin-bottom: 12px;"><strong>Scratch Graffiti & Acid-Pen Graffiti Remediation:</strong> Precision nano-abrasive polishing to lift and erase graffiti etchings, restoring a smooth, clear glass surface without weakening integrity.</li>
+                                <li style="margin-bottom: 0;"><strong>Hydroguard Protection Coating:</strong> A nano-ceramic sealant that bonds invisibly to glass, repelling water, dirt and UV damage while boosting abrasion resistance and simplifying cleaning.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Windscreen/Glass Replacement -->
+                        <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 40px; border-radius: 16px; border-top: 6px solid #f39c12; box-shadow: 0 8px 32px rgba(0,0,0,0.1); border-left: 1px solid rgba(255,255,255,0.2); border-right: 1px solid rgba(255,255,255,0.2); border-bottom: 1px solid rgba(255,255,255,0.2); min-height: 560px; display: flex; flex-direction: column;">
+                            <h3 style="color: #2c3e50; font-size: 1.4rem; font-weight: 600; margin: 0 0 20px 0; text-align: center; height: 40px; display: flex; align-items: center; justify-content: center;">Windscreen/Glass Replacement</h3>
+                            <p style="color: #2c3e50; line-height: 1.6; margin: 0 0 20px 0; font-size: 1rem; text-align: center;">Professional glass replacement services featuring all OEM-quality materials precision installation processes, factory-certified bonding adhesives, optical alignment and quality inspections for every vehicle type.</p>
+                            <ul style="color: #2c3e50; font-size: 0.9rem; line-height: 1.5; margin: 0; padding-left: 20px; text-align: left;">
+                                <li style="margin-bottom: 12px;"><strong>OEM-Spec Glass:</strong> Sourced to exact manufacturer tolerances for optimal safety, clarity and fit.</li>
+                                <li style="margin-bottom: 12px;"><strong>Accredited Installer Network:</strong> Certified technicians perform precision fitment, seal and calibration to OEM standards.</li>
+                                <li style="margin-bottom: 12px;"><strong>Mobile & Workshop Service:</strong> Flexible on-site or workshop-based replacements to suit urban and regional fleet logistics.</li>
+                                <li style="margin-bottom: 12px;"><strong>Rapid Job Coordination:</strong> Streamlined booking and dispatch processes minimise downtime and keep your vehicles on the road.</li>
+                                <li style="margin-bottom: 0;"><strong>Digital QA & Compliance:</strong> Time-stamped photo checklists and inspection reports accessible instantly via your portal.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Polymer UV Damage Remediation -->
+                        <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 40px; border-radius: 16px; border-top: 6px solid #3498db; box-shadow: 0 8px 32px rgba(0,0,0,0.1); border-left: 1px solid rgba(255,255,255,0.2); border-right: 1px solid rgba(255,255,255,0.2); border-bottom: 1px solid rgba(255,255,255,0.2); min-height: 560px; display: flex; flex-direction: column;">
+                            <h3 style="color: #2c3e50; font-size: 1.4rem; font-weight: 600; margin: 0 0 20px 0; text-align: center; height: 40px; display: flex; align-items: center; justify-content: center;">Polymer UV Damage Remediation</h3>
+                            <p style="color: #2c3e50; line-height: 1.6; margin: 0 0 20px 0; font-size: 1rem; text-align: center;">Specialized restoration techniques for UV-damaged polymer roof strips, restoring color and protection to extend service life.</p>
+                            <ul style="color: #2c3e50; font-size: 0.9rem; line-height: 1.5; margin: 0; padding-left: 20px; text-align: left;">
+                                <li style="margin-bottom: 12px;"><strong>UV Damage Assessment:</strong> Comprehensive evaluation of polymer degradation and color fading to determine optimal restoration approach.</li>
+                                <li style="margin-bottom: 12px;"><strong>Surface Preparation:</strong> Thorough cleaning and conditioning to ensure maximum adhesion and effectiveness of restoration treatments.</li>
+                                <li style="margin-bottom: 12px;"><strong>Color Restoration:</strong> Specialized compounds and techniques to restore original color depth and vibrancy to faded polymer surfaces.</li>
+                                <li style="margin-bottom: 12px;"><strong>UV Protection Coating:</strong> Application of advanced UV-resistant sealants to prevent future degradation and extend service life.</li>
+                                <li style="margin-bottom: 0;"><strong>Quality Assurance:</strong> Post-treatment inspection and documentation to ensure restoration meets performance standards.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Full Width - Xtreme Series -->
+                    <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 50px; border-radius: 16px; border-top: 6px solid #9AFF00; box-shadow: 0 8px 32px rgba(0,0,0,0.1); border-left: 1px solid rgba(255,255,255,0.2); border-right: 1px solid rgba(255,255,255,0.2); border-bottom: 1px solid rgba(255,255,255,0.2); min-height: 360px; display: flex; flex-direction: column;">
+                        <h3 style="color: #2c3e50; font-size: 2rem; font-weight: 600; margin-bottom: 30px; text-align: center;">APEAX Xtreme™ Series</h3>
+                        <p style="color: #2c3e50; line-height: 1.7; margin: 0; font-size: 1.2rem; text-align: center; margin-bottom: 30px;">
+                            Our comprehensive range of premium protection films designed for automotive, marine, and commercial applications:
+                        </p>
+                        
+                        <!-- Xtreme Series Products Grid -->
+                        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-top: 20px;">
+                            <div style="text-align: center; padding: 20px; background: rgba(52,152,219,0.1); border-radius: 12px;">
+                                <img src="apeax/images/xtremeclearshield_black_transparent.png" alt="ClearShield" style="height: 160px; margin-bottom: 20px; object-fit: contain;">
+                                <p style="color: #2c3e50; font-size: 0.9rem; line-height: 1.5; margin: 0;">Advanced headlight restoration and protection for automotive lighting. A controlled multi-stage nano-abrasive correction removes oxidation, haze and micro-scratches, then a durable clear-coat is applied for OEM-grade optical clarity. The coating improves UV stability, minimises future hazing and adds hydrophobic performance for easier cleaning, helping maintain light output and appearance for up to 3 years when properly maintained.</p>
+                            </div>
+                            <div style="text-align: center; padding: 20px; background: rgba(52,152,219,0.1); border-radius: 12px;">
+                                <img src="apeax/images/xtremeoptishield_black_transparent.png" alt="OptiShield" style="height: 160px; margin-bottom: 20px; object-fit: contain;">
+                                <p style="color: #2c3e50; font-size: 0.9rem; line-height: 1.5; margin: 0;">High-performance windscreen protection film made from optical-grade TPU with ultra-clear visibility and a hard-coated surface. Helps resist stone-chip pitting and chemical etchants while blocking >99% UV. Designed for bus/coach, heavy-duty transport, rail, marine craft and architectural glazing where impact resistance and clarity matter. Not ADR-approved for standard passenger windscreen.</p>
+                            </div>
+                            <div style="text-align: center; padding: 20px; background: rgba(52,152,219,0.1); border-radius: 12px;">
+                                <img src="apeax/images/xtremeradshield_black_transparent.png" alt="RadShield" style="height: 160px; margin-bottom: 20px; object-fit: contain;">
+                                <p style="color: #2c3e50; font-size: 0.9rem; line-height: 1.5; margin: 0;">High-performance window tint available in two grades—Carbon and Ceramic—each delivering >99% UV block and substantial heat rejection:<br><br><strong>Carbon Grade:</strong> Entry-level film offering Total Solar Energy Rejection (TSER) >50% at 30% Visible Light Transmission (VLT). Cost-effective protection against heat and glare while preserving exterior aesthetics.<br><br><strong>Ceramic Grade:</strong> Premium multilayer, sputtered film achieving TSER >65% at 35% VLT. Maximises glare reduction, cabin comfort and interior fade prevention with minimal colour shift.<br><br>Ideal for automotive, marine and commercial glazing applications down under, with both grades engineered to maintain clarity and durability in harsh UV environments.</p>
+                            </div>
+                            <div style="text-align: center; padding: 20px; background: rgba(52,152,219,0.1); border-radius: 12px;">
+                                <img src="apeax/images/xtremegrafshield_black_transparent.png" alt="GrafShield" style="height: 160px; margin-bottom: 20px; object-fit: contain;">
+                                <p style="color: #2c3e50; font-size: 0.9rem; line-height: 1.5; margin: 0;">Removable anti-graffiti / anti-scratch film with a hard-coated, ultra-smooth face that resists spray paints, inks, adhesives and light glass-etching attempts. When tagged, simply peel the sacrificial top layer to reveal clean glass beneath, reducing cleaning labour, avoiding glass replacement and minimising downtime in high-risk transit environments.</p>
+                            </div>
+                            <div style="text-align: center; padding: 20px; background: rgba(52,152,219,0.1); border-radius: 12px;">
+                                <img src="apeax/images/xtremepaintshield_black_transparent.png" alt="PaintShield" style="height: 160px; margin-bottom: 20px; object-fit: contain;">
+                                <p style="color: #2c3e50; font-size: 0.9rem; line-height: 1.5; margin: 0;">Premium self-healing paint protection film for high-mileage transit exteriors, available in Gloss and Matte (Satin) finishes. Made from durable aliphatic TPU with a micro-encapsulated topcoat that re-levels fine abrasions and swirl marks under ambient heat or warm water, preserving either a deep gloss or uniform matte look. Provides added defence against chips, scratches, UV, road chemicals and staining, with anti-yellowing performance. Maintains factory colour and surface texture while reducing rework and downtime.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Partnership & Innovation Section - Full Width -->
+    <section style="background: #1a1a1a url('images/H.png') no-repeat center center; background-size: 500px 500px; padding: 100px 0; position: relative; overflow: hidden; width: 100vw; margin-left: calc(-50vw + 50%);">
+        
+        <!-- Simplified Background Pattern -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.05;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 50px 50px;"></div>
+        </div>
+
+        <div style="max-width: 1400px; position: relative; z-index: 2; margin: 0 auto; padding: 0 40px;">
+            <h2 style="color: white; text-align: center; font-size: 3em; font-weight: 700; margin-bottom: 60px; text-shadow: 0 4px 8px rgba(0,0,0,0.3);">Our Approach</h2>
+            
+            <!-- Two Large Glassmorphism Cards -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                
+
+
+
+                <!-- Partnership Card -->
+                <div style="background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); padding: 40px; border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden; min-height: 350px; display: flex; flex-direction: column; transition: all 0.3s ease;" 
+                     onmouseover="this.style.border='1px solid rgba(52,152,219,0.3)';" 
+                     onmouseout="this.style.border='1px solid rgba(255,255,255,0.1)';">
+                    
+                    <!-- Top accent line -->
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #1e3c72, #2a5298); border-radius: 20px 20px 0 0;"></div>
+                    
+                    <h3 style="color: white; font-size: 1.8rem; font-weight: 600; margin-bottom: 25px; text-align: center; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Our Partnerships & Network</h3>
+                    <p style="color: rgba(255,255,255,0.9); line-height: 1.8; font-size: 1.1rem; margin: 0; flex-grow: 1; display: flex; align-items: center; text-shadow: 0 1px 2px rgba(0,0,0,0.2);">
+                        Partnering exclusively with APEAX in Australia, and collaborating with leading mass-transit operators, dealerships and marine, we continuously refine our offerings through R&D, field trials and customer feedback. Our national network of certified installers ensures every application, from precision glass remediation to full OEM-grade replacement done right, on time and backed by comprehensive warranties.
+                    </p>
+                </div>
+
+
+
+                <!-- Innovation Card -->
+                <div style="background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); padding: 40px; border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden; min-height: 350px; display: flex; flex-direction: column; transition: all 0.3s ease;" 
+                     onmouseover="this.style.border='1px solid rgba(52,152,219,0.3)';" 
+                     onmouseout="this.style.border='1px solid rgba(255,255,255,0.1)';">
+                    
+
+                    <!-- Top accent line -->
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #1e3c72, #2a5298); border-radius: 20px 20px 0 0;"></div>
+                    
+                    <h3 style="color: white; font-size: 1.8rem; font-weight: 600; margin-bottom: 25px; text-align: center; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Innovation is Our Blueprint</h3>
+                    <p style="color: rgba(255,255,255,0.9); line-height: 1.8; font-size: 1.1rem; margin: 0; flex-grow: 1; display: flex; align-items: center; text-shadow: 0 1px 2px rgba(0,0,0,0.2);">
+                        At Hyperglass, innovation isn't just a buzzword, it's our blueprint. We invest in emerging technologies, integrate IoT analytics via HyperPortal™ and pioneer sustainability practices to reduce waste and extend service intervals. Whether you're a busy fleet manager, a dealership upselling value-add services, or an engineer specifying glass systems, Hyperglass Innovations is your partner for smarter, longer-lasting glass care.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="sector-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Partner with Innovation?</h2>
+                <p>Discover how Hyperglass Innovations can transform your glass care approach with cutting-edge solutions and unmatched expertise.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="cta-btn primary">Contact Us</a>
+                    <a href="https://hyperportal.online" target="_blank" class="cta-btn secondary">Access HyperPortal</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: rgba(15, 23, 42, 0.95); margin-top: 0; border-top: none; padding-top: 0;">
+        <div style="width: 100%; padding: 32px 0 24px 0; display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 32px;">
+            <div style="flex: 1; height: 2px; background: linear-gradient(to right, transparent 0%, #ff9500 100%); max-width: 40%;"></div>
+            <div style="flex: none; display: flex; align-items: center; justify-content: center;">
+                <img src="images/hyperglass-logo.png" alt="Hyperglass Logo" style="height: 120px; width: auto; display: block;">
+            </div>
+            <div style="flex: 1; height: 2px; background: linear-gradient(to left, transparent 0%, #ff9500 100%); max-width: 40%;"></div>
+        </div>
+        <div class="footer-content" style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; gap: 40px; max-width: 1600px; margin: 0 auto; width: 100%;">
+            <div class="footer-section" style="flex: 1 1 420px; min-width: 320px; max-width: 520px; margin-right: 64px; display: flex; flex-direction: column; align-items: flex-start;">
+                <h3>Hyperglass</h3>
+                <p style="margin-bottom: 0; max-width: 420px; line-height: 1.7;">
+                    Hyperglass Innovations is Australia's emerging specialist in automotive, structural & Marine<br>
+                    glass life-extension & protection, performance enhancement and surface remediation.
+                </p>
+            </div>
+            <div class="footer-section" style="flex: 1 1 200px; min-width: 180px;">
+                <h3>Sectors</h3>
+                <ul>
+                    <li><a href="mass-transit.html">Mass Transit & Fleet</a></li>
+                    <li><a href="manufacturing.html">Manufacturing</a></li>
+                    <li><a href="wholesale-trade.html">Wholesale & Trade</a></li>
+                    <li><a href="structural.html">Structural</a></li>
+                    <li><a href="marine.html">Marine</a></li>
+                </ul>
+            </div>
+            <div class="footer-section" style="flex: 1 1 220px; min-width: 200px;">
+                <h3>Products</h3>
+                <ul>
+                    <li>XTREME | OptiShield™</li>
+                    <li>XTREME | PaintShield™</li>
+                    <li>XTREME | RadShield™</li>
+                    <li>XTREME | GrafShield™</li>
+                    <li>XTREME | ClearShield™</li>
+                </ul>
+            </div>
+            <div class="footer-section" style="flex: 1 1 160px; min-width: 140px;">
+                <h3>More</h3>
+                <ul>
+                    <li><a href="apeax/index.html">Apeax Australia</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Hyperglass Innovations Pty Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

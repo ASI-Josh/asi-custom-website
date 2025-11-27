@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shop - Hyperglass</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/shop.css">
+    <style>
+        /* HyperPortal Theme Override for Navigation */
+        .hyperportal-navbar {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+            will-change: transform;
+        }
+        
+        .hyperportal-navbar a {
+            color: #f8fafc !important;
+            font-weight: bold !important;
+            text-decoration: none !important;
+            opacity: 1 !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .hyperportal-navbar a:hover {
+            color: #3b82f6 !important;
+            transform: translateY(-1px);
+        }
+        
+        body {
+            padding-top: 80px;
+        }
+        
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(10px);
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+            z-index: 1001;
+            border-radius: 8px;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            top: 100%;
+            left: 0;
+            margin-top: 0px;
+            padding-top: 5px;
+        }
+        
+        .dropdown-content a {
+            color: #f8fafc !important;
+            padding: 12px 16px !important;
+            text-decoration: none !important;
+            display: block !important;
+            font-weight: bold !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .dropdown-content a:hover {
+            background: rgba(59, 130, 246, 0.1) !important;
+            color: #3b82f6 !important;
+            transform: none !important;
+        }
+        
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
+        }
+        
+        .dropdown-arrow {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="sector-page">
+    <!-- Navigation -->
+    <nav class="navbar hyperportal-navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
+      <div style="flex: 1;"></div>
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <a href="index.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Home</a>
+        <div class="dropdown">
+          <a href="sectors.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important; display: flex; align-items: center;">
+            Sectors
+            <span class="dropdown-arrow" style="font-size: 16px; font-weight: bold;">^</span>
+          </a>
+          <div class="dropdown-content">
+            <a href="mass-transit.html" style="font-weight: bold;">Mass Transit & Fleet</a>
+            <a href="manufacturing.html" style="font-weight: bold;">Manufacturing</a>
+            <a href="wholesale-trade.html" style="font-weight: bold;">Wholesale & Trade</a>
+            <a href="structural.html" style="font-weight: bold;">Structural</a>
+            <a href="marine.html" style="font-weight: bold;">Marine</a>
+          </div>
+        </div>
+        <a href="https://hyperportal.online" target="_blank" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Hyperportal</a>
+        <div style="margin: 0 30px;">
+          <img src="images/hyperglass-logo.png" alt="Hyperglass Logo" class="nav-logo-img">
+        </div>
+        <a href="apeax/index.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Apeax Australia</a>
+        <a href="contact.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Contact</a>
+        <a href="about.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">About Us</a>
+      </div>
+      <div style="flex: 1; display: flex; justify-content: flex-end;">
+        <a href="https://hyperportal.online" target="_blank" style="background: linear-gradient(135deg, #ff8c00, #ff6b00); color: white !important; padding: 14px 28px; border-radius: 25px; text-decoration: none !important; font-weight: bold; font-size: 1rem; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3); border: none;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(255, 140, 0, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(255, 140, 0, 0.3)'">
+          HYPERPORTAL
+        </a>
+      </div>
+    </nav>
+            </div>
+            <div class="cart-icon">
+                <button class="cart-btn" onclick="toggleCart()">
+                    🛒 <span id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shop Hero -->
+    <section class="shop-hero">
+        <div class="shop-hero-content">
+            <h1>Hyperglass Shop</h1>
+            <p>Premium glass products and solutions available for immediate purchase</p>
+        </div>
+    </section>
+
+    <!-- Product Categories -->
+    <section class="product-categories">
+        <div class="container">
+            <h2>Shop by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card" onclick="filterProducts('automotive')">
+                    <div class="category-icon">🚗</div>
+                    <h3>Automotive Glass</h3>
+                    <p>Windshields, side windows, and replacement glass</p>
+                </div>
+                <div class="category-card" onclick="filterProducts('residential')">
+                    <div class="category-icon">🏠</div>
+                    <h3>Residential Glass</h3>
+                    <p>Windows, doors, and home glazing solutions</p>
+                </div>
+                <div class="category-card" onclick="filterProducts('commercial')">
+                    <div class="category-icon">🏢</div>
+                    <h3>Commercial Glass</h3>
+                    <p>Office buildings, storefronts, and facades</p>
+                </div>
+                <div class="category-card" onclick="filterProducts('safety')">
+                    <div class="category-icon">🛡️</div>
+                    <h3>Safety Glass</h3>
+                    <p>Tempered, laminated, and security glass</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-header">
+                <h2>Featured Products</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
+                    <button class="filter-btn" onclick="filterProducts('automotive')">Automotive</button>
+                    <button class="filter-btn" onclick="filterProducts('residential')">Residential</button>
+                    <button class="filter-btn" onclick="filterProducts('commercial')">Commercial</button>
+                    <button class="filter-btn" onclick="filterProducts('safety')">Safety</button>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="products-grid">
+                <!-- Automotive Products -->
+                <div class="product-card" data-category="automotive">
+                    <img src="images/windshield.jpg" alt="Car Windshield" class="product-image">
+                    <div class="product-info">
+                        <h3>Premium Car Windshield</h3>
+                        <p>High-quality replacement windshield for most vehicle models</p>
+                        <div class="product-price">$299.00</div>
+                        <button class="add-to-cart-btn" onclick="addToCart('windshield', 'Premium Car Windshield', 299.00)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="automotive">
+                    <img src="images/side-window.jpg" alt="Side Window" class="product-image">
+                    <div class="product-info">
+                        <h3>Side Window Glass</h3>
+                        <p>Replacement side window glass - driver/passenger side</p>
+                        <div class="product-price">$149.00</div>
+                        <button class="add-to-cart-btn" onclick="addToCart('side-window', 'Side Window Glass', 149.00)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Residential Products -->
+                <div class="product-card" data-category="residential">
+                    <img src="images/window-pane.jpg" alt="Window Pane" class="product-image">
+                    <div class="product-info">
+                        <h3>Double Glazed Window</h3>
+                        <p>Energy efficient double glazed window unit</p>
+                        <div class="product-price">$450.00</div>
+                        <button class="add-to-cart-btn" onclick="addToCart('double-glazed', 'Double Glazed Window', 450.00)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="residential">
+                    <img src="images/glass-door.jpg" alt="Glass Door" class="product-image">
+                    <div class="product-info">
+                        <h3>Sliding Glass Door</h3>
+                        <p>Premium sliding glass door for patios and balconies</p>
+                        <div class="product-price">$899.00</div>
+                        <button class="add-to-cart-btn" onclick="addToCart('sliding-door', 'Sliding Glass Door', 899.00)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Commercial Products -->
+                <div class="product-card" data-category="commercial">
+                    <img src="images/storefront-glass.jpg" alt="Storefront Glass" class="product-image">
+                    <div class="product-info">
+                        <h3>Storefront Glass Panel</h3>
+                        <p>Large format glass panel for commercial storefronts</p>
+                        <div class="product-price">$650.00</div>
+                        <button class="add-to-cart-btn" onclick="addToCart('storefront', 'Storefront Glass Panel', 650.00)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Safety Products -->
+                <div class="product-card" data-category="safety">
+                    <img src="images/tempered-glass.jpg" alt="Tempered Glass" class="product-image">
+                    <div class="product-info">
+                        <h3>Tempered Safety Glass</h3>
+                        <p>High-strength tempered glass for safety applications</p>
+                        <div class="product-price">$199.00</div>
+                        <button class="add-to-cart-btn" onclick="addToCart('tempered', 'Tempered Safety Glass', 199.00)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: $<span id="cart-total">0.00</span></strong>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Hyperglass</h3>
+                <p>Australia's leading provider of specialized glass solutions across multiple industries.</p>
+                <div class="footer-logo">
+                    <img src="images/hyperglass-logo.png" alt="Hyperglass Logo" class="footer-logo-img">
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#sectors">Sectors</a></li>
+                    <li><a href="shop.html">Shop/Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="mass-transit.html">Mass-Transit & Fleets</a></li>
+                    <li><a href="manufacturing.html">Manufacturing</a></li>
+                    <li><a href="wholesale-trade.html">Wholesale & Trade</a></li>
+                    <li><a href="structural.html">Structural</a></li>
+                    <li><a href="marine.html">Marine</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <div class="contact-info">
+                    <p>📧 sales@hyperglass.com.au</p>
+                    <p>📞 0437 087 042</p>
+                    <p>🌐 www.hyperglass.com.au</p>
+                </div>
+                <div class="footer-buttons">
+                    <a href="https://hyperportal.online" target="_blank" class="footer-btn">🚀 Hyperportal</a>
+                    <a href="#apeax" class="footer-btn">Apeax Australia</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Hyperglass Innovations Pty Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/shop.js"></script>
+</body>
+</html>

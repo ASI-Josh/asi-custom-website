@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us - Hyperglass</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        /* HyperPortal Theme Override for Navigation */
+        .hyperportal-navbar {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+            will-change: transform;
+        }
+        
+        .hyperportal-navbar a {
+            color: #f8fafc !important;
+            font-weight: bold !important;
+            text-decoration: none !important;
+            opacity: 1 !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .hyperportal-navbar a:hover {
+            color: #3b82f6 !important;
+            transform: translateY(-1px);
+        }
+        
+        body {
+            padding-top: 80px;
+        }
+        
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(10px);
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+            z-index: 1001;
+            border-radius: 8px;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            top: 100%;
+            left: 0;
+            margin-top: 0px;
+            padding-top: 5px;
+        }
+        
+        .dropdown-content a {
+            color: #f8fafc !important;
+            padding: 12px 16px !important;
+            text-decoration: none !important;
+            display: block !important;
+            font-weight: bold !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .dropdown-content a:hover {
+            background: rgba(59, 130, 246, 0.1) !important;
+            color: #3b82f6 !important;
+            transform: none !important;
+        }
+        
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
+        }
+        
+        .dropdown-arrow {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar hyperportal-navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
+      <div style="flex: 1;"></div>
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <a href="index.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Home</a>
+        <div class="dropdown">
+          <a href="sectors.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important; display: flex; align-items: center;">
+            Sectors
+            <span class="dropdown-arrow" style="font-size: 16px; font-weight: bold;">^</span>
+          </a>
+          <div class="dropdown-content">
+            <a href="mass-transit.html" style="font-weight: bold;">Mass Transit & Fleet</a>
+            <a href="manufacturing.html" style="font-weight: bold;">Manufacturing</a>
+            <a href="wholesale-trade.html" style="font-weight: bold;">Wholesale & Trade</a>
+            <a href="structural.html" style="font-weight: bold;">Structural</a>
+            <a href="marine.html" style="font-weight: bold;">Marine</a>
+          </div>
+        </div>
+        <a href="https://hyperportal.online" target="_blank" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Hyperportal</a>
+        <div style="margin: 0 30px;">
+          <img src="images/hyperglass-logo.png" alt="Hyperglass Logo" class="nav-logo-img">
+        </div>
+        <a href="apeax/index.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Apeax Australia</a>
+        <a href="contact.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Contact</a>
+        <a href="about.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">About Us</a>
+      </div>
+      <div style="flex: 1; display: flex; justify-content: flex-end;">
+        <a href="https://hyperportal.online" target="_blank" style="background: linear-gradient(135deg, #ff8c00, #ff6b00); color: white !important; padding: 14px 28px; border-radius: 25px; text-decoration: none !important; font-weight: bold; font-size: 1rem; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3); border: none;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(255, 140, 0, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(255, 140, 0, 0.3)'">
+          HYPERPORTAL
+        </a>
+      </div>
+    </nav>
+
+    <!-- Contact Content -->
+    <section class="contact-content">
+        <div class="contact-wrapper">
+            <!-- Contact Form -->
+            <div class="contact-form-section">
+                <div class="form-header">
+                    <h2>Contact Us</h2>
+                    <div class="form-divider"></div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Please select</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="quote">Request Quote</option>
+                            <option value="mass-transit">Mass-Transit & Fleets</option>
+                            <option value="manufacturing">Manufacturing</option>
+                            <option value="wholesale">Wholesale & Trade</option>
+                            <option value="structural">Structural</option>
+                            <option value="marine">Marine</option>
+                            <option value="support">Technical Support</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="6" required placeholder="Please provide details about your inquiry..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info-section">
+                <div class="contact-info-card">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <strong>Phone:</strong>
+                            <p>0437 087 042</p>
+                        </div>
+                        <div class="contact-detail">
+                            <strong>Email:</strong>
+                            <p>sales@hyperglass.com.au</p>
+                        </div>
+                        <div class="contact-detail">
+                            <strong>Website:</strong>
+                            <p>www.hyperglass.com.au</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="logo-display">
+                        <img src="images/hyperglass-h-logo.png" alt="Hyperglass H Logo" class="contact-h-logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Banner Section -->
+    <section class="hero-banner-section" style="padding: 0;">
+        <div style="width: 100%; margin: 0;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; height: 600px; width: 100%;">
+                
+                <!-- Sectors Side -->
+                <div style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.9)), url('images/mass-transit-hero.jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; position: relative; cursor: pointer; transition: all 0.3s ease;" onclick="window.location.href='sectors.html'">
+                    <div style="text-align: center; color: white; z-index: 2;">
+                        <h3 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Sectors</h3>
+                        <p style="font-size: 1.1rem; opacity: 0.9; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Explore our industry solutions</p>
+                    </div>
+                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3); transition: all 0.3s ease; z-index: 1;"></div>
+                </div>
+                
+                <!-- Apeax Australia Side -->
+                <div style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.9)), url('images/apeaxtruckimage1.jpeg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; position: relative; cursor: pointer; transition: all 0.3s ease;" onclick="window.location.href='apeax/index.html'">
+                    <div style="text-align: center; color: white; z-index: 2;">
+                        <h3 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); color: #CCFF00;">APEAX AUSTRALIA</h3>
+                        <p style="font-size: 1.1rem; opacity: 0.9; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Surface protection solutions</p>
+                    </div>
+                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3); transition: all 0.3s ease; z-index: 1;"></div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <style>
+        .hero-banner-section div[onclick]:hover {
+            transform: translateY(-5px);
+        }
+        .hero-banner-section div[onclick]:hover > div:last-child {
+            background: rgba(0,0,0,0.1) !important;
+        }
+        </style>
+    </section>
+
+    <!-- Same footer as main page -->
+    <footer class="footer" style="background: rgba(15, 23, 42, 0.95); margin-top: 0; border-top: none; padding-top: 0;">
+        <div style="width: 100%; padding: 32px 0 24px 0; display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 32px;">
+            <div style="flex: 1; height: 2px; background: linear-gradient(to right, transparent 0%, #ff9500 100%); max-width: 40%;"></div>
+            <div style="flex: none; display: flex; align-items: center; justify-content: center;">
+                <img src="images/hyperglass-logo.png" alt="Hyperglass Logo" style="height: 120px; width: auto; display: block;">
+            </div>
+            <div style="flex: 1; height: 2px; background: linear-gradient(to left, transparent 0%, #ff9500 100%); max-width: 40%;"></div>
+        </div>
+        <div class="footer-content" style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; gap: 40px; max-width: 1600px; margin: 0 auto; width: 100%;">
+            <div class="footer-section" style="flex: 1 1 420px; min-width: 320px; max-width: 520px; margin-right: 64px; display: flex; flex-direction: column; align-items: flex-start;">
+                <h3>Hyperglass</h3>
+                <p style="margin-bottom: 0; max-width: 420px; line-height: 1.7;">
+                    Hyperglass Innovations is Australia's emerging specialist in automotive, structural & Marine<br>
+                    glass life-extension & protection, performance enhancement and surface remediation.
+                </p>
+            </div>
+            <div class="footer-section" style="flex: 1 1 200px; min-width: 180px;">
+                <h3>Sectors</h3>
+                <ul>
+                    <li><a href="mass-transit.html">Mass Transit & Fleet</a></li>
+                    <li><a href="manufacturing.html">Manufacturing</a></li>
+                    <li><a href="wholesale-trade.html">Wholesale & Trade</a></li>
+                    <li><a href="structural.html">Structural</a></li>
+                    <li><a href="marine.html">Marine</a></li>
+                </ul>
+            </div>
+            <div class="footer-section" style="flex: 1 1 220px; min-width: 200px;">
+                <h3>Products</h3>
+                <ul>
+                    <li>XTREME | OptiShield™</li>
+                    <li>XTREME | PaintShield™</li>
+                    <li>XTREME | RadShield™</li>
+                    <li>XTREME | GrafShield™</li>
+                    <li>XTREME | ClearShield™</li>
+                </ul>
+            </div>
+            <div class="footer-section" style="flex: 1 1 160px; min-width: 140px;">
+                <h3>More</h3>
+                <ul>
+                    <li><a href="apeax/index.html">Apeax Australia</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Hyperglass Innovations Pty Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

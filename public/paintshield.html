@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PaintShield - Apeax Australia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        /* HyperPortal Theme Override for Navigation */
+        .hyperportal-navbar {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+            will-change: transform;
+        }
+        
+        .hyperportal-navbar a {
+            color: #f8fafc !important;
+            font-weight: bold !important;
+            text-decoration: none !important;
+            opacity: 1 !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .hyperportal-navbar a:hover {
+            color: #3b82f6 !important;
+            transform: translateY(-1px);
+        }
+        
+        body {
+            padding-top: 80px;
+        }
+        
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(10px);
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+            z-index: 1001;
+            border-radius: 8px;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            top: 100%;
+            left: 0;
+            margin-top: 0px;
+            padding-top: 5px;
+        }
+        
+        .dropdown-content a {
+            color: #f8fafc !important;
+            padding: 12px 16px !important;
+            text-decoration: none !important;
+            display: block !important;
+            font-weight: bold !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .dropdown-content a:hover {
+            background: rgba(59, 130, 246, 0.1) !important;
+            color: #3b82f6 !important;
+            transform: none !important;
+        }
+        
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
+        }
+        
+        .dropdown-arrow {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="sector-page">
+    <!-- Navigation -->
+    <nav class="navbar hyperportal-navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
+      <div style="flex: 1;"></div>
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <a href="index.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Home</a>
+        <div class="dropdown">
+          <a href="sectors.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important; display: flex; align-items: center;">
+            Sectors
+            <span class="dropdown-arrow" style="font-size: 16px; font-weight: bold;">^</span>
+          </a>
+          <div class="dropdown-content">
+            <a href="mass-transit.html" style="font-weight: bold;">Mass Transit & Fleet</a>
+            <a href="manufacturing.html" style="font-weight: bold;">Manufacturing</a>
+            <a href="wholesale-trade.html" style="font-weight: bold;">Wholesale & Trade</a>
+            <a href="structural.html" style="font-weight: bold;">Structural</a>
+            <a href="marine.html" style="font-weight: bold;">Marine</a>
+          </div>
+        </div>
+        <a href="https://hyperportal.online" target="_blank" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Hyperportal</a>
+        <div style="margin: 0 30px;">
+          <img src="images/hyperglass-logo.png" alt="Hyperglass Logo" class="nav-logo-img">
+        </div>
+        <a href="apeax/index.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Apeax Australia</a>
+        <a href="contact.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Contact</a>
+        <a href="about.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">About Us</a>
+      </div>
+      <div style="flex: 1; display: flex; justify-content: flex-end;">
+        <a href="https://hyperportal.online" target="_blank" style="background: linear-gradient(135deg, #ff8c00, #ff6b00); color: white !important; padding: 14px 28px; border-radius: 25px; text-decoration: none !important; font-weight: bold; font-size: 1rem; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3); border: none;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(255, 140, 0, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(255, 140, 0, 0.3)'">
+          HYPERPORTAL
+        </a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section style="background: url('images/paintshieldboatrender1.png'); background-size: cover; background-position: center; height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding-top: 80px;">
+        <div style="text-align: center; color: white; z-index: 2; max-width: 800px; padding: 0 20px;">
+            <img src="apeax/images/xtremepaintshield_white_transparent.png" alt="PaintShield" style="height: 300px; margin-bottom: 30px;">
+            <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Advanced Marine Coating Technology</h1>
+            <p style="font-size: 1.4rem; font-weight: 500; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">Premium paint protection solutions for marine applications</p>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section style="padding: 100px 0; background: #f8f9fa;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                <div>
+                    <h2 style="font-size: 2.5rem; color: #2c3e50; margin-bottom: 30px; font-weight: 700;">What is PaintShield?</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px; color: #555;">PaintShield represents the pinnacle of marine paint protection technology. Our advanced coating system provides unparalleled protection against the harsh marine environment while maintaining the aesthetic appeal of your vessel.</p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px; color: #555;">Engineered specifically for marine applications, PaintShield creates an invisible barrier that protects against salt corrosion, UV damage, and environmental contaminants.</p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">Whether you're protecting a luxury yacht or a commercial vessel, PaintShield delivers professional-grade results that extend the life and beauty of your marine investment.</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="images/paintshieldboatrender1.png" alt="PaintShield Application" style="width: 100%; max-width: 500px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section style="padding: 100px 0; background: #fff;">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 3rem; margin-bottom: 60px; color: #2c3e50; font-weight: 700;">Key Features & Benefits</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                
+                <div style="background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-left: 5px solid #e74c3c;">
+                    <div style="font-size: 2.5em; margin-bottom: 20px;">🛡️</div>
+                    <h3 style="color: #e74c3c; margin-bottom: 15px; font-size: 1.3em; font-weight: 600;">Superior Protection</h3>
+                    <p style="color: #666; line-height: 1.6;">Advanced polymer technology creates an impenetrable barrier against salt, UV rays, and environmental contaminants.</p>
+                </div>
+
+                <div style="background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-left: 5px solid #e74c3c;">
+                    <div style="font-size: 2.5em; margin-bottom: 20px;">💧</div>
+                    <h3 style="color: #e74c3c; margin-bottom: 15px; font-size: 1.3em; font-weight: 600;">Hydrophobic Surface</h3>
+                    <p style="color: #666; line-height: 1.6;">Water beads and rolls off effortlessly, reducing water spots and making cleaning significantly easier.</p>
+                </div>
+
+                <div style="background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-left: 5px solid #e74c3c;">
+                    <div style="font-size: 2.5em; margin-bottom: 20px;">✨</div>
+                    <h3 style="color: #e74c3c; margin-bottom: 15px; font-size: 1.3em; font-weight: 600;">Enhanced Gloss</h3>
+                    <p style="color: #666; line-height: 1.6;">Maintains and enhances the original paint finish, providing a deep, lustrous shine that lasts.</p>
+                </div>
+
+                <div style="background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-left: 5px solid #e74c3c;">
+                    <div style="font-size: 2.5em; margin-bottom: 20px;">⏱️</div>
+                    <h3 style="color: #e74c3c; margin-bottom: 15px; font-size: 1.3em; font-weight: 600;">Long-Lasting Durability</h3>
+                    <p style="color: #666; line-height: 1.6;">Professional-grade formulation provides years of protection, reducing maintenance costs and frequency.</p>
+                </div>
+
+                <div style="background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-left: 5px solid #e74c3c;">
+                    <div style="font-size: 2.5em; margin-bottom: 20px;">🌊</div>
+                    <h3 style="color: #e74c3c; margin-bottom: 15px; font-size: 1.3em; font-weight: 600;">Marine-Specific</h3>
+                    <p style="color: #666; line-height: 1.6;">Engineered specifically for marine environments, withstanding saltwater, extreme temperatures, and UV exposure.</p>
+                </div>
+
+                <div style="background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-left: 5px solid #e74c3c;">
+                    <div style="font-size: 2.5em; margin-bottom: 20px;">🔧</div>
+                    <h3 style="color: #e74c3c; margin-bottom: 15px; font-size: 1.3em; font-weight: 600;">Easy Maintenance</h3>
+                    <p style="color: #666; line-height: 1.6;">Simplified cleaning process saves time and effort, allowing for quick wash-downs with minimal scrubbing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section style="padding: 100px 0; background: #f8f9fa;">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 3rem; margin-bottom: 60px; color: #2c3e50; font-weight: 700;">Marine Applications</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                
+                <div style="background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); text-align: center;">
+                    <div style="font-size: 3em; margin-bottom: 15px;">🛥️</div>
+                    <h3 style="color: #e74c3c; margin-bottom: 10px; font-weight: 600;">Luxury Yachts</h3>
+                    <p style="color: #666; font-size: 0.9rem;">Premium protection for high-end recreational vessels</p>
+                </div>
+
+                <div style="background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); text-align: center;">
+                    <div style="font-size: 3em; margin-bottom: 15px;">🚢</div>
+                    <h3 style="color: #e74c3c; margin-bottom: 10px; font-weight: 600;">Commercial Vessels</h3>
+                    <p style="color: #666; font-size: 0.9rem;">Professional-grade protection for working boats</p>
+                </div>
+
+                <div style="background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); text-align: center;">
+                    <div style="font-size: 3em; margin-bottom: 15px;">⛵</div>
+                    <h3 style="color: #e74c3c; margin-bottom: 10px; font-weight: 600;">Sailing Boats</h3>
+                    <p style="color: #666; font-size: 0.9rem;">Lightweight protection that doesn't affect performance</p>
+                </div>
+
+                <div style="background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); text-align: center;">
+                    <div style="font-size: 3em; margin-bottom: 15px;">🏭</div>
+                    <h3 style="color: #e74c3c; margin-bottom: 10px; font-weight: 600;">Offshore Platforms</h3>
+                    <p style="color: #666; font-size: 0.9rem;">Industrial-strength protection for extreme conditions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section style="padding: 100px 0; background: #fff;">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 3rem; margin-bottom: 60px; color: #2c3e50; font-weight: 700;">Application Process</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+                
+                <div style="text-align: center; padding: 20px;">
+                    <div style="width: 80px; height: 80px; background: #e74c3c; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 1.5em; font-weight: bold;">1</div>
+                    <h3 style="color: #2c3e50; margin-bottom: 15px; font-weight: 600;">Surface Preparation</h3>
+                    <p style="color: #666; font-size: 0.9rem;">Thorough cleaning and preparation of the paint surface</p>
+                </div>
+
+                <div style="text-align: center; padding: 20px;">
+                    <div style="width: 80px; height: 80px; background: #e74c3c; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 1.5em; font-weight: bold;">2</div>
+                    <h3 style="color: #2c3e50; margin-bottom: 15px; font-weight: 600;">Quality Assessment</h3>
+                    <p style="color: #666; font-size: 0.9rem;">Professional evaluation of paint condition and compatibility</p>
+                </div>
+
+                <div style="text-align: center; padding: 20px;">
+                    <div style="width: 80px; height: 80px; background: #e74c3c; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 1.5em; font-weight: bold;">3</div>
+                    <h3 style="color: #2c3e50; margin-bottom: 15px; font-weight: 600;">Application</h3>
+                    <p style="color: #666; font-size: 0.9rem;">Expert application using specialized techniques and equipment</p>
+                </div>
+
+                <div style="text-align: center; padding: 20px;">
+                    <div style="width: 80px; height: 80px; background: #e74c3c; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 1.5em; font-weight: bold;">4</div>
+                    <h3 style="color: #2c3e50; margin-bottom: 15px; font-weight: 600;">Curing & Inspection</h3>
+                    <p style="color: #666; font-size: 0.9rem;">Proper curing time and final quality inspection</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specifications -->
+    <section style="padding: 100px 0; background: #1a1a1a; color: white;">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 3rem; margin-bottom: 60px; font-weight: 700;">Technical Specifications</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px);">
+                    <h3 style="color: #e74c3c; margin-bottom: 20px; font-size: 1.3em; font-weight: 600;">Performance Data</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #e74c3c;">•</span>
+                            UV Protection: 99.9% UV ray blocking
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #e74c3c;">•</span>
+                            Durability: 5+ years marine environment
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #e74c3c;">•</span>
+                            Water Contact Angle: 110°+
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #e74c3c;">•</span>
+                            Temperature Range: -20°C to +80°C
+                        </li>
+                    </ul>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px);">
+                    <h3 style="color: #e74c3c; margin-bottom: 20px; font-size: 1.3em; font-weight: 600;">Chemical Resistance</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #e74c3c;">•</span>
+                            Salt Water: Excellent
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #e74c3c;">•</span>
+                            Acids: Good to Excellent
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #e74c3c;">•</span>
+                            Alkalis: Good to Excellent
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #e74c3c;">•</span>
+                            Fuel/Oil: Excellent
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Banner -->
+    <section style="padding: 80px 0; background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 3rem; margin-bottom: 20px; font-weight: 700;">Coming Soon</h2>
+            <p style="font-size: 1.4rem; margin-bottom: 30px;">PaintShield is currently in final development and testing phases.</p>
+            <p style="font-size: 1.1rem; opacity: 0.9;">Be the first to experience the future of marine paint protection.</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="padding: 100px 0; background: #f8f9fa;">
+        <div class="container">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <h2 style="font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px; font-weight: 700;">Ready to Protect Your Investment?</h2>
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 40px;">Contact our marine coating specialists to learn more about PaintShield and reserve your spot for early access.</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" style="background: #e74c3c; color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s ease;">Get More Information</a>
+                    <a href="https://hyperportal.online" target="_blank" style="background: transparent; color: #e74c3c; padding: 15px 30px; border: 2px solid #e74c3c; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s ease;">Marine Portal</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Hyperglass</h3>
+                <p>Australia's leading provider of specialized glass solutions across multiple industries.</p>
+                <div class="footer-logo">
+                    <img src="images/hyperglass-logo.png" alt="Hyperglass Logo" class="footer-logo-img">
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sectors.html">Sectors</a></li>
+                    <li><a href="shop.html">Shop/Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Apeax Products</h3>
+                <ul>
+                    <li><a href="apeax/index.html">Apeax Australia</a></li>
+                    <li><a href="paintshield.html">PaintShield</a></li>
+                    <li><a href="marine.html">Marine Solutions</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <div class="contact-info">
+                    <p>📧 sales@hyperglass.com.au</p>
+                    <p>📞 0437 087 042</p>
+                    <p>🌐 www.hyperglass.com.au</p>
+                </div>
+                <div class="footer-buttons">
+                    <a href="https://hyperportal.online" target="_blank" class="footer-btn">🚀 Hyperportal</a>
+                    <a href="apeax/index.html" class="footer-btn">Apeax Australia</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Hyperglass Innovations Pty Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

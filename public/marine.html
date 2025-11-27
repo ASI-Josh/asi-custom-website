@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marine - Hyperglass</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        /* HyperPortal Theme Override for Navigation */
+        .hyperportal-navbar {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+            will-change: transform;
+        }
+        
+        .hyperportal-navbar a {
+            color: #f8fafc !important;
+            font-weight: bold !important;
+            text-decoration: none !important;
+            opacity: 1 !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .hyperportal-navbar a:hover {
+            color: #3b82f6 !important;
+            transform: translateY(-1px);
+        }
+        
+        body {
+            padding-top: 80px;
+        }
+        
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(10px);
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+            z-index: 1001;
+            border-radius: 8px;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            top: 100%;
+            left: 0;
+            margin-top: 0px;
+            padding-top: 5px;
+        }
+        
+        .dropdown-content a {
+            color: #f8fafc !important;
+            padding: 12px 16px !important;
+            text-decoration: none !important;
+            display: block !important;
+            font-weight: bold !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .dropdown-content a:hover {
+            background: rgba(59, 130, 246, 0.1) !important;
+            color: #3b82f6 !important;
+            transform: none !important;
+        }
+        
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
+        }
+        
+        .dropdown-arrow {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="sector-page">
+    <!-- Navigation -->
+    <nav class="navbar hyperportal-navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
+      <div style="flex: 1;"></div>
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <a href="index.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Home</a>
+        <div class="dropdown">
+          <a href="sectors.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important; display: flex; align-items: center;">
+            Sectors
+            <span class="dropdown-arrow" style="font-size: 16px; font-weight: bold;">^</span>
+          </a>
+          <div class="dropdown-content">
+            <a href="mass-transit.html" style="font-weight: bold;">Mass Transit & Fleet</a>
+            <a href="manufacturing.html" style="font-weight: bold;">Manufacturing</a>
+            <a href="wholesale-trade.html" style="font-weight: bold;">Wholesale & Trade</a>
+            <a href="structural.html" style="font-weight: bold;">Structural</a>
+            <a href="marine.html" style="font-weight: bold;">Marine</a>
+          </div>
+        </div>
+        <a href="https://hyperportal.online" target="_blank" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Hyperportal</a>
+        <div style="margin: 0 30px;">
+          <img src="images/hyperglass-logo.png" alt="Hyperglass Logo" class="nav-logo-img">
+        </div>
+        <a href="apeax/index.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Apeax Australia</a>
+        <a href="contact.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Contact</a>
+        <a href="about.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">About Us</a>
+      </div>
+      <div style="flex: 1; display: flex; justify-content: flex-end;">
+        <a href="https://hyperportal.online" target="_blank" style="background: linear-gradient(135deg, #ff8c00, #ff6b00); color: white !important; padding: 14px 28px; border-radius: 25px; text-decoration: none !important; font-weight: bold; font-size: 1rem; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3); border: none;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(255, 140, 0, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(255, 140, 0, 0.3)'">
+          HYPERPORTAL
+        </a>
+      </div>
+    </nav>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="sector-hero marine" style="background-image: url('images/azimut-grande-44m.jpg'); background-size: cover; background-position: center 25%; background-repeat: no-repeat; position: relative; height: 80vh;">
+        <!-- Lighter dark overlay with vignette effect -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: 
+            radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 70%, rgba(0,0,0,0.6) 100%), 
+            linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.3) 100%); 
+            z-index: 1;"></div>
+        <div class="sector-hero-content" style="position: relative; z-index: 2; background: transparent; border-radius: 0;">
+            <h1>Marine</h1>
+            <p>Specialized marine glazing solutions for vessels, offshore platforms, and maritime applications</p>
+        </div>
+        <!-- Gradient fade to next section -->
+        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 150px; background: linear-gradient(to bottom, transparent 0%, rgba(26,26,26,0.8) 70%, rgba(26,26,26,1) 100%); z-index: 3; pointer-events: none;"></div>
+    </section>
+
+    <!-- Overview Section (moved between hero and services) -->
+    <section class="sector-overview" style="background: #1a1a1a; padding: 50px 0; position: relative;">
+        <div class="container">
+            <div class="overview-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+                <div class="overview-text" style="transform: translateX(-175px);">
+                    <h2 style="color: white; text-align: center; width: 115%; margin-bottom: 20px;">Marine Glass & Surface Protection Solutions</h2>
+                    <div style="width: 115%;">
+                        <p style="color: rgba(255,255,255,0.9); text-align: justify;">Keep your vessel's glass and exterior surfaces pristine and protected with Hyperglass's specialist marine remediation, coating & film services. Our Marine Glass Decontamination service eradicates salt, mineral encrustation and biofilm to restore perfect clarity. Our Precision Scratch Remediation polishes away blemishes for uninterrupted visibility through windshields and windows. Our HydroGuard™ Marine Coating delivers a durable, water-repellent barrier that resists salt spray, UV damage and staining, cutting maintenance downtime by up to 60 percent.</p>
+                        <p style="color: rgba(255,255,255,0.9); text-align: justify;">For comprehensive exterior & interior protection, we supply and install APEAX XTREME films tailored for marine applications: OptiShield™ delivers premium windscreen and glass protection; PaintShield™ guards painted hulls and superstructures, RadShield™ offers high-performance window tinting for glare reduction and UV defense, and GrafShield™ provides an interior anti-scratch barrier for cabin glass. Each film ensures an OEM-grade finish, corrosion resistance and extended asset lifespan, all backed by full ISO-aligned traceability and Australian-approved materials. Empower your fleet with Hyperglass's end-to-end marine protection suite.</p>
+                    </div>
+                </div>
+                <div class="overview-image" style="padding-right: 40px; transform: translateX(160px) translateY(20px);">
+                    <img src="images/boat-1.jpg" alt="Marine Glass Solutions" style="transform: scale(1.5); width: 100%; height: auto;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="sector-services" style="background: #1a1a1a url('images/H.png') no-repeat center 240px; background-size: 500px 500px; padding: 100px 0; position: relative; overflow: hidden;">
+        
+        <!-- Simplified Background Pattern -->
+        <div class="hyperportal-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.05;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 50px 50px;"></div>
+        </div>
+
+        <div class="container" style="max-width: 1600px; position: relative; z-index: 2;">
+            <h2 style="color: white; text-align: center; font-size: 3em; font-weight: 700; margin-bottom: 60px; text-shadow: 0 4px 8px rgba(0,0,0,0.3);">Our Marine Services</h2>
+            <div class="services-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px;">
+                
+                <div class="service-card" style="background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); padding: 30px; border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden;" 
+                     onmouseover="this.style.border='1px solid rgba(52,152,219,0.3)';" 
+                     onmouseout="this.style.border='1px solid rgba(255,255,255,0.1)';">
+                    
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #1e3c72, #2a5298); border-radius: 20px 20px 0 0;"></div>
+                    
+                    <div class="service-icon" style="font-size: 2.5em; margin-bottom: 20px;">⚡</div>
+                    <h3 style="color: white; margin-bottom: 20px; font-size: 1.4em;">Deep Scratch Remediation</h3>
+                    <div style="line-height: 1.6;">
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.9);"><strong>Production-Grade Extraction:</strong> Targeted removal of deep substrate scratches and gouges using controlled multi-stage polishing sequences, restoring glass to OEM clarity per service workflow.</p>
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.9);"><strong>Batch-Level Traceability:</strong> Complete logging of polishing compounds, pad specifications and process cycles, aligned to your ADR and ISO audit requirements.</p>
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.9);"><strong>Integrated Compliance:</strong> Dust suppression, wastewater capture and operator PPE validations delivered just-in-time to your maintenance facility.</p>
+                    </div>
+                </div>
+
+                <div class="service-card" style="background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); padding: 30px; border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden;" 
+                     onmouseover="this.style.border='1px solid rgba(52,152,219,0.3)';" 
+                     onmouseout="this.style.border='1px solid rgba(255,255,255,0.1)';">
+                    
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #1e3c72, #2a5298); border-radius: 20px 20px 0 0;"></div>
+                    
+                    <div class="service-icon" style="font-size: 2.5em; margin-bottom: 20px;">🛡️</div>
+                    <h3 style="color: white; margin-bottom: 20px; font-size: 1.4em;">HydroGuard & Specialist Surface Coatings</h3>
+                    <div style="line-height: 1.6;">
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.9);"><strong>HydroGuard Hydrophobic Coating:</strong> Nano-ceramic formula for rapid water runoff on glass, stainless fittings and composite surfaces.</p>
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.9);"><strong>Benefits:</strong> Cuts salt corrosion, reduces bio-fouling and eases wash-down.</p>
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.9);"><strong>Anti-Fouling & Anti-Graffiti Films:</strong> Removable/replaceable films to prevent barnacle or weed adhesion.</p>
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.9);"><strong>UV-Stable Ceramic Sealants:</strong> Durable ceramic layers for gel-coat and superstructure protection.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Marine Products Hero Banner Section -->
+    <section style="background: #1a1a1a; padding: 20px 0 100px 0; position: relative; overflow: hidden;">
+        
+        <!-- Strong fade at top of APEAX section -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 200px; background: linear-gradient(to bottom, rgba(26,26,26,1) 0%, rgba(26,26,26,0.9) 30%, rgba(26,26,26,0.5) 70%, rgba(26,26,26,0) 100%); z-index: 3; pointer-events: none;"></div>
+        
+        <!-- Background Pattern -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.05;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 50px 50px;"></div>
+        </div>
+
+            <!-- Apeax Logo - moved higher -->
+            <div style="text-align: center; margin-bottom: 40px; margin-top: -10px;">
+                <img src="images/apeaxaussurfaceprotection.png" alt="Apeax Australia Surface Protection" style="max-width: 500px; height: auto; margin: -20px 0; filter: brightness(1.1) drop-shadow(0 0 30px rgba(154, 255, 0, 0.6));">
+            </div>
+            
+            <!-- 2x2 Grid of Hero Banners -->
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; height: 1000px; margin-top: 40px;">
+                
+                <!-- Hero Banner 1 -->
+                <div style="position: relative; background: linear-gradient(135deg, rgba(52, 152, 219, 0.15), rgba(41, 128, 185, 0.2)), url('images/optishieldboatimage1.png'); background-size: cover; background-position: center; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0,0,0,0.2);">
+                    <div style="text-align: center; color: white; z-index: 2;">
+                        <img src="apeax/images/xtremeoptishield_white_transparent.png" alt="Optishield" style="height: 240px; margin-bottom: 15px;">
+                        <p style="font-size: 1.2rem; font-weight: 500; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">Premium marine protection solution</p>
+                        <p style="font-size: 1rem; margin-top: 10px; opacity: 0.9;">Coming Soon</p>
+                    </div>
+                </div>
+
+                <!-- Hero Banner 2 -->
+                <div style="position: relative; background: linear-gradient(135deg, rgba(52, 152, 219, 0.15), rgba(41, 128, 185, 0.2)), url('images/paintshieldboatrender1.png'); background-size: cover; background-position: center; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0,0,0,0.2);">
+                    <div style="text-align: center; color: white; z-index: 2;">
+                        <img src="apeax/images/xtremepaintshield_white_transparent.png" alt="Paintshield" style="height: 240px; margin-bottom: 15px;">
+                        <p style="font-size: 1.2rem; font-weight: 500; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">Advanced marine coating technology</p>
+                        <p style="font-size: 1rem; margin-top: 10px; opacity: 0.9;">Coming Soon</p>
+                    </div>
+                </div>
+
+                <!-- Hero Banner 3 -->
+                <div style="position: relative; background: linear-gradient(135deg, rgba(52, 152, 219, 0.15), rgba(41, 128, 185, 0.2)), url('images/radshieldboatimage1.png'); background-size: cover; background-position: center; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0,0,0,0.2);">
+                    <div style="text-align: center; color: white; z-index: 2;">
+                        <img src="apeax/images/xtremeradshield_white_transparent.png" alt="Radshield" style="height: 240px; margin-bottom: 15px;">
+                        <p style="font-size: 1.2rem; font-weight: 500; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">Specialized marine glass solutions</p>
+                        <p style="font-size: 1rem; margin-top: 10px; opacity: 0.9;">Coming Soon</p>
+                    </div>
+                </div>
+
+                <!-- Hero Banner 4 -->
+                <div style="position: relative; background: linear-gradient(135deg, rgba(52, 152, 219, 0.15), rgba(41, 128, 185, 0.2)), url('images/ship-porthole-image.jpg'); background-size: cover; background-position: center; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0,0,0,0.2);">
+                    <div style="text-align: center; color: white; z-index: 2;">
+                        <img src="apeax/images/xtremegrafshield_white_transparent.png" alt="Grafshield" style="height: 240px; margin-bottom: 15px;">
+                        <p style="font-size: 1.2rem; font-weight: 500; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">Professional marine maintenance solutions</p>
+                        <p style="font-size: 1rem; margin-top: 10px; opacity: 0.9;">Coming Soon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="background: #1a1a1a; padding: 100px 0; position: relative; overflow: hidden;">
+        
+        <!-- Background Pattern -->
+        <!-- Footer -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.05;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 50px 50px;"></div>
+        </div>
+
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2;">
+            <div style="background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); padding: 60px; border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); text-align: center; position: relative; overflow: hidden;">
+                
+                <!-- Top accent line -->
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #1e3c72, #2a5298); border-radius: 20px 20px 0 0;"></div>
+                
+                <!-- HyperGlass Logo -->
+                <div style="margin-bottom: 40px;">
+                    <img src="images/hyperglass-logo.png" alt="Hyperglass Logo" style="height: 145px; filter: brightness(1.2); object-fit: contain; object-position: center; background: transparent; padding: 0; margin: 0; display: block; margin-left: auto; margin-right: auto;">
+                </div>
+                
+                <h2 style="color: white; font-size: 2.5rem; font-weight: 700; margin-bottom: 40px; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Ready to Protect Your Boat?</h2>
+                
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" style="background: linear-gradient(135deg, #1e3c72, #2a5298); color: white !important; padding: 16px 32px; border-radius: 25px; text-decoration: none !important; font-weight: bold; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(30, 60, 114, 0.3); border: none;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(30, 60, 114, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(30, 60, 114, 0.3)'">
+                        Contact Us
+                    </a>
+                    <a href="https://hyperportal.online" target="_blank" style="background: linear-gradient(135deg, #ff8c00, #ff6b00); color: white !important; padding: 16px 32px; border-radius: 25px; text-decoration: none !important; font-weight: bold; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3); border: none;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(255, 140, 0, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(255, 140, 0, 0.3)'">
+                        HyperPortal™
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: rgba(15, 23, 42, 0.95); margin-top: 0; border-top: none; padding-top: 0;">
+        <div style="width: 100%; padding: 32px 0 24px 0; display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 32px;">
+            <div style="flex: 1; height: 2px; background: linear-gradient(to right, transparent 0%, #ff9500 100%); max-width: 40%;"></div>
+            <div style="flex: none; display: flex; align-items: center; justify-content: center;">
+                <img src="images/hyperglass-logo.png" alt="Hyperglass Logo" style="height: 120px; width: auto; display: block;">
+            </div>
+            <div style="flex: 1; height: 2px; background: linear-gradient(to left, transparent 0%, #ff9500 100%); max-width: 40%;"></div>
+        </div>
+        <div class="footer-content" style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; gap: 40px; max-width: 1600px; margin: 0 auto; width: 100%;">
+            <div class="footer-section" style="flex: 1 1 420px; min-width: 320px; max-width: 520px; margin-right: 64px; display: flex; flex-direction: column; align-items: flex-start;">
+                <h3>Hyperglass</h3>
+                <p style="margin-bottom: 0; max-width: 420px; line-height: 1.7;">
+                    Hyperglass Innovations is Australia's emerging specialist in automotive, structural & Marine<br>
+                    glass life-extension & protection, performance enhancement and surface remediation.
+                </p>
+            </div>
+            <div class="footer-section" style="flex: 1 1 200px; min-width: 180px;">
+                <h3>Sectors</h3>
+                <ul>
+                    <li><a href="mass-transit.html">Mass Transit & Fleet</a></li>
+                    <li><a href="manufacturing.html">Manufacturing</a></li>
+                    <li><a href="wholesale-trade.html">Wholesale & Trade</a></li>
+                    <li><a href="structural.html">Structural</a></li>
+                    <li><a href="marine.html">Marine</a></li>
+                </ul>
+            </div>
+            <div class="footer-section" style="flex: 1 1 220px; min-width: 200px;">
+                <h3>Products</h3>
+                <ul>
+                    <li>XTREME | OptiShield™</li>
+                    <li>XTREME | PaintShield™</li>
+                    <li>XTREME | RadShield™</li>
+                    <li>XTREME | GrafShield™</li>
+                    <li>XTREME | ClearShield™</li>
+                </ul>
+            </div>
+            <div class="footer-section" style="flex: 1 1 160px; min-width: 140px;">
+                <h3>More</h3>
+                <ul>
+                    <li><a href="apeax/index.html">Apeax Australia</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Hyperglass Innovations Pty Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

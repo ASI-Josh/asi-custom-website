@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wholesale & Trade - Hyperglass</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        /* HyperPortal Theme Override for Navigation */
+        .hyperportal-navbar {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+            will-change: transform;
+        }
+        
+        .hyperportal-navbar a {
+            color: #f8fafc !important;
+            font-weight: bold !important;
+            text-decoration: none !important;
+            opacity: 1 !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .hyperportal-navbar a:hover {
+            color: #3b82f6 !important;
+            transform: translateY(-1px);
+        }
+        
+        body {
+            padding-top: 80px;
+        }
+        
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(10px);
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+            z-index: 1001;
+            border-radius: 8px;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            top: 100%;
+            left: 0;
+            margin-top: 0px;
+            padding-top: 5px;
+        }
+        
+        .dropdown-content a {
+            color: #f8fafc !important;
+            padding: 12px 16px !important;
+            text-decoration: none !important;
+            display: block !important;
+            font-weight: bold !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .dropdown-content a:hover {
+            background: rgba(59, 130, 246, 0.1) !important;
+            color: #3b82f6 !important;
+            transform: none !important;
+        }
+        
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
+        }
+        
+        .dropdown-arrow {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="sector-page">
+    <!-- Navigation -->
+    <nav class="navbar hyperportal-navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
+      <div style="flex: 1;"></div>
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <a href="index.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Home</a>
+        <div class="dropdown">
+          <a href="sectors.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important; display: flex; align-items: center;">
+            Sectors
+            <span class="dropdown-arrow" style="font-size: 16px; font-weight: bold;">^</span>
+          </a>
+          <div class="dropdown-content">
+            <a href="mass-transit.html" style="font-weight: bold;">Mass Transit & Fleet</a>
+            <a href="manufacturing.html" style="font-weight: bold;">Manufacturing</a>
+            <a href="wholesale-trade.html" style="font-weight: bold;">Wholesale & Trade</a>
+            <a href="structural.html" style="font-weight: bold;">Structural</a>
+            <a href="marine.html" style="font-weight: bold;">Marine</a>
+          </div>
+        </div>
+        <a href="https://hyperportal.online" target="_blank" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Hyperportal</a>
+        <div style="margin: 0 30px;">
+          <img src="images/hyperglass-logo.png" alt="Hyperglass Logo" class="nav-logo-img">
+        </div>
+        <a href="apeax/index.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Apeax Australia</a>
+        <a href="contact.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Contact</a>
+        <a href="about.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">About Us</a>
+      </div>
+      <div style="flex: 1; display: flex; justify-content: flex-end;">
+        <a href="https://hyperportal.online" target="_blank" style="background: linear-gradient(135deg, #ff8c00, #ff6b00); color: white !important; padding: 14px 28px; border-radius: 25px; text-decoration: none !important; font-weight: bold; font-size: 1rem; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3); border: none;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(255, 140, 0, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(255, 140, 0, 0.3)'">
+          HYPERPORTAL
+        </a>
+      </div>
+    </nav>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="sector-hero wholesale" style="background-image: url('images/wholesale-trade.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative; height: 80vh;">
+        <!-- Lighter dark overlay with vignette effect -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: 
+            radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 70%, rgba(0,0,0,0.6) 100%), 
+            linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.3) 100%); 
+            z-index: 1;"></div>
+        <div class="sector-hero-content" style="position: relative; z-index: 2; background: transparent; border-radius: 0;">
+            <h1>Wholesale & Trade</h1>
+            <p>Bulk glass solutions for retailers, contractors, and trade professionals across Australia</p>
+        </div>
+        <!-- Gradient fade to next section -->
+        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 150px; background: linear-gradient(to bottom, transparent 0%, rgba(26,26,26,0.8) 70%, rgba(26,26,26,1) 100%); z-index: 3; pointer-events: none;"></div>
+    </section>
+
+    <!-- Overview Section (moved between hero and services) -->
+    <section class="sector-overview" style="background: #1a1a1a; padding: 50px 0; position: relative;">
+        <div class="container">
+            <div class="overview-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+                <div class="overview-text" style="transform: translateX(-175px);">
+                    <h2 style="color: white; text-align: center; width: 115%; margin-bottom: 20px;">Professional Trade Solutions</h2>
+                    <div style="width: 115%;">
+                        <p style="color: rgba(255,255,255,0.9); text-align: justify;">Hyperglass Innovations transforms every windscreen and glass service into a strategic revenue driver for truck dealerships, bus operators, mechanics and fleet managers across Melbourne. By combining precision stone-chip repairs, multi-stage scratch remediation and full ADR-compliant glass replacement, each backed by batch-certified traceability, you can offer premium add-on services that customers value and willingly pay for, all while boosting resale appeal.</p>
+                        <p style="color: rgba(255,255,255,0.9); text-align: justify;">As Australia's exclusive distributor of all APEAX Films, we integrate high-performance innovative protective films & coatings that elevate vehicle presentation, safeguard surfaces and extend asset lifespan. With rapid turnaround, consistent OEM-grade finish and rigorous ISO documentation, Hyperglass empowers your workshop & dealerships to capture premium margins, strengthen customer loyalty and stand out in a competitive wholesale and trade market.</p>
+                    </div>
+                </div>
+                <div class="overview-image" style="padding-right: 40px; transform: translateX(160px) translateY(20px);">
+                    <img src="images/mcc-crack-repair.jpg" alt="Professional Glass Repair Services" style="transform: scale(1.5); width: 100%; height: auto;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="sector-services" style="background: #1a1a1a url('images/H.png') no-repeat center center; background-size: 500px 500px; padding: 100px 0; position: relative; overflow: hidden;">
+        
+        <!-- Simplified Background Pattern -->
+        <div class="hyperportal-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.05;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 50px 50px;"></div>
+        </div>
+
+        <div class="container" style="max-width: 1600px; position: relative; z-index: 2;">
+            <h2 style="color: white; text-align: center; font-size: 3em; font-weight: 700; margin-bottom: 60px; text-shadow: 0 4px 8px rgba(0,0,0,0.3);">Our Wholesale & Trade Services</h2>
+            <div class="services-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px;">
+                
+                <div class="service-card" style="background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); padding: 30px; border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden; min-height: 450px;" 
+                     onmouseover="this.style.border='1px solid rgba(52,152,219,0.3)';" 
+                     onmouseout="this.style.border='1px solid rgba(255,255,255,0.1)';">
+                    
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #1e3c72, #2a5298); border-radius: 20px 20px 0 0;"></div>
+                    
+                    <div class="service-icon" style="font-size: 2.5em; margin-bottom: 20px;">🔧</div>
+                    <h3 style="color: white; margin-bottom: 20px; font-size: 1.4em;">Precision Glass Remediation Services</h3>
+                    <div style="line-height: 1.6;">
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.9);"><strong>Crack & Chip Repair:</strong> Chips and cracks repaired via resin injection to rebuild structural integrity and prevent spread.</p>
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.9);"><strong>Thermal-stress Fracture Stabilisation:</strong> UV-cure systems for rapid cure and return to service.</p>
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.9);"><strong>Wiper-Arc & Etch Remediation:</strong> Precision micro-abrasion to remove wiper-arc "rainbow" marks without annealing the OEM seal.</p>
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.9);"><strong>Chemical-etch Removal:</strong> Light graffiti removal preserving factory coatings and acoustic dampening layers.</p>
+                    </div>
+                </div>
+
+                <div class="service-card" style="background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); padding: 30px; border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden; min-height: 450px;" 
+                     onmouseover="this.style.border='1px solid rgba(52,152,219,0.3)';" 
+                     onmouseout="this.style.border='1px solid rgba(255,255,255,0.1)';">
+                    
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #1e3c72, #2a5298); border-radius: 20px 20px 0 0;"></div>
+                    
+                    <div class="service-icon" style="font-size: 2.5em; margin-bottom: 20px;">🔄</div>
+                    <h3 style="color: white; margin-bottom: 20px; font-size: 1.4em;">OEM-Grade Windscreen & Side-Glass Replacement</h3>
+                    <div style="line-height: 1.6;">
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.9);"><strong>Full Windscreen & Side-Glass Change-out:</strong> Using original-equipment specification glazing, including acoustic calibration.</p>
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.9);"><strong>Silicone Window Seal Damage Remediation:</strong> Professional seal repair and replacement services.</p>
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.9);"><strong>Micro-Scratch & Surface Restoration:</strong> Precision multi-step nano-abrasive polishing process removing micro-fissures, swirl marks and surface hazing.</p>
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.9);"><strong>Multi-stage Buffing:</strong> Dedicated clearing compound to refine finish and restore full optical clarity.</p>
+                    </div>
+                </div>
+
+                <div class="service-card" style="background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); padding: 30px; border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden; min-height: 450px;" 
+                     onmouseover="this.style.border='1px solid rgba(52,152,219,0.3)';" 
+                     onmouseout="this.style.border='1px solid rgba(255,255,255,0.1)';">
+                    
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #1e3c72, #2a5298); border-radius: 20px 20px 0 0;"></div>
+                    
+                    <div class="service-icon" style="font-size: 2.5em; margin-bottom: 20px;">🛡️</div>
+                    <h3 style="color: white; margin-bottom: 20px; font-size: 1.4em;">HydroGuard™ Surface Protection Coating</h3>
+                    <div style="line-height: 1.6;">
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.9);"><strong>Hydrophobic Performance:</strong> Self-cleaning surface that sheds water, road grime and brake dust, reducing wiper drag by up to 40%.</p>
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.9);"><strong>UV-Resistant Shield:</strong> Blocks >98% of UV radiation preventing glass micro-etching and seal-degradation.</p>
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.9);"><strong>Abrasion & Chemical Defence:</strong> Hard ceramic-infused polymers guard against scratches, acid rain etch and environmental fallout.</p>
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.9);"><strong>Fleet Longevity:</strong> Up to 60% reduction in full-glass replacements and 25% drop in unscheduled downtime.</p>
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.9);"><strong>Add-On Revenue:</strong> Turnkey premium service that enhances your portfolio and boosts per-vehicle revenue.</p>
+                    </div>
+                </div>
+
+                <div class="service-card" style="background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); padding: 30px; border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden; min-height: 450px;" 
+                     onmouseover="this.style.border='1px solid rgba(52,152,219,0.3)';" 
+                     onmouseout="this.style.border='1px solid rgba(255,255,255,0.1)';">
+                    
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #1e3c72, #2a5298); border-radius: 20px 20px 0 0;"></div>
+                    
+                    <div class="service-icon" style="font-size: 2.5em; margin-bottom: 20px;">💡</div>
+                    <h3 style="color: white; margin-bottom: 20px; font-size: 1.4em;">Optical Surface Restoration (Headlights & Lenses)</h3>
+                    <div style="line-height: 1.6;">
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.9);"><strong>ISO-compliant Headlight Restoration:</strong> Sequential UV damage removal with refined Hyperglass processes, polishing and GClear™ Clear Coat application.</p>
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.9);"><strong>3-Year Protection:</strong> Eliminates yellowing/clouding and protects from UV damage for 3 years.</p>
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.9);"><strong>Polymer-lens Rejuvenation:</strong> For taillights, spotlights and indicators, removing oxidation and restoring optical clarity to OEM levels.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Apeax Section -->
+    <section style="background: #1a1a1a; padding: 20px 0 100px 0; position: relative; overflow: hidden;">
+        
+        <!-- Strong fade at top of APEAX section -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 200px; background: linear-gradient(to bottom, rgba(26,26,26,1) 0%, rgba(26,26,26,0.9) 30%, rgba(26,26,26,0.5) 70%, rgba(26,26,26,0) 100%); z-index: 3; pointer-events: none;"></div>
+        
+        <!-- Background Pattern -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.05;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 50px 50px;"></div>
+        </div>
+
+        <div style="position: relative; z-index: 4;">
+            <!-- Apeax Logo - moved higher -->
+            <div style="text-align: center; margin-bottom: 40px; margin-top: -10px;">
+
+                <img src="images/apeaxaussurfaceprotection.png" alt="Apeax Australia Surface Protection" style="max-width: 500px; height: auto; margin: -20px 0; filter: brightness(1.1) drop-shadow(0 0 30px rgba(154, 255, 0, 0.6));">
+            </div>
+            
+            <!-- Large Optishield Banner -->
+            <div style="position: relative; background: linear-gradient(135deg, rgba(52, 152, 219, 0.15), rgba(41, 128, 185, 0.2)), url('images/optishieldmovingtruckgreener.png'); background-size: cover; background-position: center; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0,0,0,0.2); height: 700px; margin-bottom: 0; width: 100vw; margin-left: calc(-50vw + 50%);">
+                <!-- Strong fade at top of Optishield banner -->
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 250px; background: linear-gradient(to bottom, rgba(26,26,26,1) 0%, rgba(26,26,26,0.95) 20%, rgba(26,26,26,0.7) 50%, rgba(26,26,26,0.3) 80%, rgba(26,26,26,0) 100%); z-index: 1; pointer-events: none;"></div>
+                <div style="text-align: center; color: white; z-index: 2; position: relative; transform: translateY(10px);">
+                    <img src="apeax/images/xtremeoptishield_white_transparent.png" alt="Optishield" style="height: 320px; margin-bottom: 15px;">
+                    <p style="font-size: 1.5rem; font-weight: 500; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">Fleet-Grade Commercial Windscreen Protection</p>
+                    <p style="font-size: 1.2rem; margin-top: 10px; opacity: 0.9;">Coming Soon</p>
+                </div>
+            </div>
+
+            <!-- 2x2 Grid of APEAX Hero Banners -->
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; height: 1000px; width: 100vw; margin-left: calc(-50vw + 50%);">
+                
+                <!-- Hero Banner 1 - Radshield -->
+                <div style="position: relative; background: linear-gradient(135deg, rgba(52, 152, 219, 0.15), rgba(41, 128, 185, 0.2)), url('images/675apeaxwindowtintimage.png'); background-size: cover; background-position: center; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0,0,0,0.2);">
+                    <div style="text-align: center; color: white; z-index: 2;">
+                        <img src="apeax/images/xtremeradshield_white_transparent.png" alt="Radshield" style="height: 240px; margin-bottom: 15px;">
+                        <p style="font-size: 1.2rem; font-weight: 500; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">Wholesale & Aftersales Window Tint Solutions</p>
+                        <p style="font-size: 1rem; margin-top: 10px; opacity: 0.9;">Coming Soon</p>
+                    </div>
+                </div>
+
+                <!-- Hero Banner 2 - Paintshield -->
+                <div style="position: relative; background: linear-gradient(135deg, rgba(52, 152, 219, 0.15), rgba(41, 128, 185, 0.2)), url('images/porschepaintshield.png'); background-size: cover; background-position: center; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0,0,0,0.2);">
+                    <div style="text-align: center; color: white; z-index: 2;">
+                        <img src="apeax/images/xtremepaintshield_white_transparent.png" alt="Paintshield" style="height: 240px; margin-bottom: 15px;">
+                        <p style="font-size: 1.2rem; font-weight: 500; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">Heavy-Duty Body Protection For Cars & Heavy Vehicles</p>
+                        <p style="font-size: 1rem; margin-top: 10px; opacity: 0.9;">Coming Soon</p>
+                    </div>
+                </div>
+
+                <!-- Hero Banner 3 - Clearshield -->
+                <div style="position: relative; background: linear-gradient(135deg, rgba(52, 152, 219, 0.15), rgba(41, 128, 185, 0.2)), url('apeax/images/Headlight ClearShield Image.jpg'); background-size: cover; background-position: center; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0,0,0,0.2);">
+                    <div style="text-align: center; color: white; z-index: 2;">
+                        <img src="apeax/images/xtremeclearshield_white_transparent.png" alt="Clearshield" style="height: 240px; margin-bottom: 15px;">
+                        <p style="font-size: 1.2rem; font-weight: 500; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">Optical-Grade Lens Protection Film & Coating</p>
+                        <p style="font-size: 1rem; margin-top: 10px; opacity: 0.9;">Coming Soon</p>
+                    </div>
+                </div>
+
+                <!-- Hero Banner 4 - Grafshield -->
+                <div style="position: relative; background: linear-gradient(135deg, rgba(52, 152, 219, 0.15), rgba(41, 128, 185, 0.2)), url('images/glass scratches.jpg'); background-size: cover; background-position: center; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0,0,0,0.2);">
+                    <div style="text-align: center; color: white; z-index: 2;">
+                        <img src="apeax/images/xtremegrafshield_white_transparent.png" alt="Grafshield" style="height: 240px; margin-bottom: 15px;">
+                        <p style="font-size: 1.2rem; font-weight: 500; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">Anti-Graffiti Protection For Glass Scratches & Acid Pens</p>
+                        <p style="font-size: 1rem; margin-top: 10px; opacity: 0.9;">Coming Soon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Guide Section (from Mass Transit) -->
+    <section class="application-guide-section" style="background: #1a1a1a; padding: 200px 0 0 0; position: relative; overflow: hidden; min-height: 800px; margin-bottom: 0;">
+        
+        <!-- Simplified Background Pattern -->
+        <div class="hyperportal-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.05;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 50px 50px;"></div>
+        </div>
+
+        <div class="container" style="max-width: 1600px; position: relative; z-index: 10;">
+            <!-- Title Section -->
+            <h2 style="color: white; font-size: 3em; font-weight: 700; text-shadow: 0 4px 8px rgba(0,0,0,0.3); text-align: center; margin-bottom: 60px; margin-top: -100px; position: relative; z-index: 10;">Application Guide</h2>
+        </div>
+        
+        <!-- Left Side - Capability Table (HTML version) -->
+        <div class="capability-table-container" style="position: absolute; left: 100px; top: 290px; width: 800px; z-index: 3;">
+            <div style="background: rgba(255,255,255,0.08); backdrop-filter: blur(15px); border-radius: 15px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); overflow: hidden; border: 1px solid rgba(255,255,255,0.2);">
+                <!-- Table Header -->
+                <div style="background: linear-gradient(135deg, rgba(30,60,114,0.9), rgba(42,82,152,0.9)); backdrop-filter: blur(10px); color: white; padding: 15px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <h3 style="margin: 0; font-size: 1.3em; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Wholesale & Trade Capability Table</h3>
+                </div>
+                
+                <!-- Table Content -->
+                <div style="padding: 20px;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.65em;">
+                        <thead>
+                            <tr style="background: rgba(255,255,255,0.1); backdrop-filter: blur(5px); border-bottom: 2px solid rgba(255,255,255,0.2);">
+                                <th style="padding: 10px 6px; text-align: left; font-weight: 700; color: white; border-right: 1px solid rgba(255,255,255,0.2); width: 110px;">APPLICATION</th>
+                                <th style="padding: 10px 4px; text-align: center; font-weight: 700; color: white; border-right: 1px solid rgba(255,255,255,0.2); width: 80px;">XTREME<br>OPTISHIELD™</th>
+                                <th style="padding: 10px 4px; text-align: center; font-weight: 700; color: white; border-right: 1px solid rgba(255,255,255,0.2); width: 80px;">XTREME<br>PAINTSHIELD™</th>
+                                <th style="padding: 10px 4px; text-align: center; font-weight: 700; color: white; border-right: 1px solid rgba(255,255,255,0.2); width: 80px;">XTREME<br>CLEARSHIELD™</th>
+                                <th style="padding: 10px 4px; text-align: center; font-weight: 700; color: white; border-right: 1px solid rgba(255,255,255,0.2); width: 80px;">HYDROGUARD™</th>
+                                <th style="padding: 10px 4px; text-align: center; font-weight: 700; color: white; border-right: 1px solid rgba(255,255,255,0.2); width: 90px;">GLASS & POLYMER<br>REMEDIATION &<br>LIFE EXTENSION</th>
+                                <th style="padding: 10px 4px; text-align: center; font-weight: 700; color: white; width: 80px;">SCRATCH &<br>GRAFFITI<br>REMOVAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03);">
+                                <td style="padding: 8px 6px; font-weight: 600; color: white; border-right: 1px solid rgba(255,255,255,0.1);">WINDSCREEN<br><span style="font-size: 0.9em; opacity: 0.8;">(inc. DEST. PANEL)</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                                <td style="padding: 8px 4px; text-align: center;"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.06);">
+                                <td style="padding: 8px 6px; font-weight: 600; color: white; border-right: 1px solid rgba(255,255,255,0.1);">SIDE GLASS<br><span style="font-size: 0.9em; opacity: 0.8;">(INTERNAL)</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                                <td style="padding: 8px 4px; text-align: center;"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03);">
+                                <td style="padding: 8px 6px; font-weight: 600; color: white; border-right: 1px solid rgba(255,255,255,0.1);">SIDE GLASS<br><span style="font-size: 0.9em; opacity: 0.8;">(EXTERNAL)</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                                <td style="padding: 8px 4px; text-align: center;"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.06);">
+                                <td style="padding: 8px 6px; font-weight: 600; color: white; border-right: 1px solid rgba(255,255,255,0.1);">REAR GLASS<br><span style="font-size: 0.9em; opacity: 0.8;">(EXTERNAL)</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                                <td style="padding: 8px 4px; text-align: center;"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03);">
+                                <td style="padding: 8px 6px; font-weight: 600; color: white; border-right: 1px solid rgba(255,255,255,0.1);">REAR GLASS<br><span style="font-size: 0.9em; opacity: 0.8;">(INTERNAL)</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                                <td style="padding: 8px 4px; text-align: center;"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.06);">
+                                <td style="padding: 8px 6px; font-weight: 600; color: white; border-right: 1px solid rgba(255,255,255,0.1);">BODY<br><span style="font-size: 0.9em; opacity: 0;">&nbsp;</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center;"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03);">
+                                <td style="padding: 8px 6px; font-weight: 600; color: white; border-right: 1px solid rgba(255,255,255,0.1);">LENSES<br><span style="font-size: 0.9em; opacity: 0;">&nbsp;</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                                <td style="padding: 8px 4px; text-align: center;"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.06);">
+                                <td style="padding: 8px 6px; font-weight: 600; color: white; border-right: 1px solid rgba(255,255,255,0.1);">POLYMER TRIMS<br><span style="font-size: 0.9em; opacity: 0;">&nbsp;</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                                <td style="padding: 8px 4px; text-align: center;"><span style="color: #f87171; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(248,113,113,0.5);">✗</span></td>
+                            </tr>
+                            <tr style="background: rgba(255,255,255,0.03);">
+                                <td style="padding: 8px 6px; font-weight: 600; color: white; border-right: 1px solid rgba(255,255,255,0.1);">POST-DELIVERY<br><span style="font-size: 0.9em; opacity: 0.8;">SERVICING</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                                <td style="padding: 8px 4px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                                <td style="padding: 8px 4px; text-align: center;"><span style="color: #4ade80; font-weight: bold; font-size: 1.4em; text-shadow: 0 0 10px rgba(74,222,128,0.5);">✓</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Footer -->
+                <div style="background: rgba(255,255,255,0.05); backdrop-filter: blur(5px); padding: 12px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+                    <p style="margin: 0; font-size: 0.7em; color: rgba(255,255,255,0.8); font-style: italic; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">✓ = Service Available | ✗ = Not Applicable</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Side - Van Truck Diagram -->
+        <img src="images/vantruckdiagramofproducts1.png" alt="Van Truck Products Diagram" style="position: absolute; right: 50px; top: 150px; max-width: 850px; height: auto; display: block; z-index: 3;">
+    </section>
+
+    <!-- CTA Section -->
+    <section style="background: #1a1a1a; padding: 100px 0; position: relative; overflow: hidden;">
+        
+        <!-- Background Pattern -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.05;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 50px 50px;"></div>
+        </div>
+
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2;">
+            <div style="background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); padding: 60px; border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); text-align: center; position: relative; overflow: hidden;">
+                
+                <!-- Top accent line -->
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #1e3c72, #2a5298); border-radius: 20px 20px 0 0;"></div>
+                
+                <!-- HyperGlass Logo -->
+                <div style="margin-bottom: 40px;">
+                    <img src="images/hyperglass-logo.png" alt="Hyperglass Logo" style="height: 145px; filter: brightness(1.2); object-fit: contain; object-position: center; background: transparent; padding: 0; margin: 0; display: block; margin-left: auto; margin-right: auto;">
+                </div>
+                
+                <h2 style="color: white; font-size: 2.5rem; font-weight: 700; margin-bottom: 40px; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Ready to Add Premium Glass & Paint Protection?</h2>
+                
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" style="background: linear-gradient(135deg, #1e3c72, #2a5298); color: white !important; padding: 16px 32px; border-radius: 25px; text-decoration: none !important; font-weight: bold; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(30, 60, 114, 0.3); border: none;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(30, 60, 114, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(30, 60, 114, 0.3)'">
+                        Contact Us
+                    </a>
+                    <a href="https://hyperportal.online" target="_blank" style="background: linear-gradient(135deg, #ff8c00, #ff6b00); color: white !important; padding: 16px 32px; border-radius: 25px; text-decoration: none !important; font-weight: bold; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3); border: none;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(255, 140, 0, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(255, 140, 0, 0.3)'">
+                        HyperPortal™
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: rgba(15, 23, 42, 0.95); margin-top: 0; border-top: none; padding-top: 0;">
+        <div style="width: 100%; padding: 32px 0 24px 0; display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 32px;">
+            <div style="flex: 1; height: 2px; background: linear-gradient(to right, transparent 0%, #ff9500 100%); max-width: 40%;"></div>
+            <div style="flex: none; display: flex; align-items: center; justify-content: center;">
+                <img src="images/hyperglass-logo.png" alt="Hyperglass Logo" style="height: 120px; width: auto; display: block;">
+            </div>
+            <div style="flex: 1; height: 2px; background: linear-gradient(to left, transparent 0%, #ff9500 100%); max-width: 40%;"></div>
+        </div>
+        <div class="footer-content" style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; gap: 40px; max-width: 1600px; margin: 0 auto; width: 100%;">
+            <div class="footer-section" style="flex: 1 1 420px; min-width: 320px; max-width: 520px; margin-right: 64px; display: flex; flex-direction: column; align-items: flex-start;">
+                <h3>Hyperglass</h3>
+                <p style="margin-bottom: 0; max-width: 420px; line-height: 1.7;">
+                    Hyperglass Innovations is Australia's emerging specialist in automotive, structural & Marine<br>
+                    glass life-extension & protection, performance enhancement and surface remediation.
+                </p>
+            </div>
+            <div class="footer-section" style="flex: 1 1 200px; min-width: 180px;">
+                <h3>Sectors</h3>
+                <ul>
+                    <li><a href="mass-transit.html">Mass Transit & Fleet</a></li>
+                    <li><a href="manufacturing.html">Manufacturing</a></li>
+                    <li><a href="wholesale-trade.html">Wholesale & Trade</a></li>
+                    <li><a href="structural.html">Structural</a></li>
+                    <li><a href="marine.html">Marine</a></li>
+                </ul>
+            </div>
+            <div class="footer-section" style="flex: 1 1 220px; min-width: 200px;">
+                <h3>Products</h3>
+                <ul>
+                    <li>XTREME | OptiShield™</li>
+                    <li>XTREME | PaintShield™</li>
+                    <li>XTREME | RadShield™</li>
+                    <li>XTREME | GrafShield™</li>
+                    <li>XTREME | ClearShield™</li>
+                </ul>
+            </div>
+            <div class="footer-section" style="flex: 1 1 160px; min-width: 140px;">
+                <h3>More</h3>
+                <ul>
+                    <li><a href="apeax/index.html">Apeax Australia</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Hyperglass Innovations Pty Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

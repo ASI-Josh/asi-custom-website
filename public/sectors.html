@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hyperglass - Premium Glass Solutions</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        /* HyperPortal Theme Override for Navigation */
+        .hyperportal-navbar {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+            will-change: transform;
+        }
+        
+        .hyperportal-navbar a {
+            color: #f8fafc !important;
+            font-weight: bold !important;
+            text-decoration: none !important;
+            opacity: 1 !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .hyperportal-navbar a:hover {
+            color: #3b82f6 !important;
+            transform: translateY(-1px);
+        }
+        
+        body {
+            padding-top: 80px;
+        }
+        
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(10px);
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+            z-index: 1001;
+            border-radius: 8px;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            top: 100%;
+            left: 0;
+            margin-top: 0px;
+            padding-top: 5px;
+        }
+        
+        .dropdown-content a {
+            color: #f8fafc !important;
+            padding: 12px 16px !important;
+            text-decoration: none !important;
+            display: block !important;
+            font-weight: bold !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .dropdown-content a:hover {
+            background: rgba(59, 130, 246, 0.1) !important;
+            color: #3b82f6 !important;
+            transform: none !important;
+        }
+        
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
+        }
+        
+        .dropdown-arrow {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* HyperPortal Theme Override - REMOVE BACKGROUND EFFECT */
+        .hyperportal-theme {
+            background: #0a0a0a;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        /* REMOVE this entire section - it's causing the lag */
+        .hyperportal-theme::before {
+            display: none;
+        }
+        
+        /* REMOVE this too - the gradient background effect */
+        .hyperportal-theme::after {
+            display: none;
+        }
+        
+        .hyperportal-card {
+            background: rgba(15, 23, 42, 0.6);
+            /* REDUCED blur from 16px to 8px for better performance */
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+            /* Add hardware acceleration */
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        .hyperportal-card:hover {
+            border-color: rgba(128, 128, 128, 0.6);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+        }
+        
+        /* Hero sector cards - rectangular with no curved corners */
+        .hero-sector-card.hyperportal-card {
+            border-radius: 0 !important;
+            /* Optimize background images */
+            background-attachment: scroll; /* Instead of fixed */
+        }
+        
+        .hyperportal-text {
+            color: rgba(248, 250, 252, 0.9);
+        }
+        
+        .hyperportal-heading {
+            color: #f8fafc;
+            font-weight: 600;
+            /* Hardware acceleration */
+            will-change: transform;
+        }
+        
+        .hyperportal-navbar.show {
+            transform: translateY(0);
+        }
+        
+        .hyperportal-navbar .nav-links a {
+            color: #f8fafc !important;
+            font-weight: 500 !important;
+            text-decoration: none !important;
+            opacity: 1 !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .hyperportal-navbar .nav-links a:hover {
+            color: #3b82f6 !important;
+            transform: translateY(-1px);
+        }
+        
+        .hyperportal-navbar .login-btn {
+            color: #f8fafc !important;
+            font-weight: 600 !important;
+            opacity: 1 !important;
+            background: rgba(59, 130, 246, 0.2) !important;
+            border: 1px solid rgba(59, 130, 246, 0.4) !important;
+            border-radius: 8px !important;
+            padding: 8px 16px !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .hyperportal-navbar .login-btn:hover {
+            background: rgba(59, 130, 246, 0.3) !important;
+            border-color: rgba(59, 130, 246, 0.6) !important;
+            transform: translateY(-1px);
+        }
+        
+        body {
+            padding-top: 0;
+        }
+    </style>
+</head>
+<body class="hyperportal-theme">
+
+    <section class="hero">
+        <!-- Independent logo floating above everything -->
+        <div class="hero-logo">
+            <img src="images/hyperglass-logo.png" alt="Hyperglass Logo" class="hero-logo-img">
+        </div>
+        
+        <!-- Independent back arrow for center card -->
+        <div class="back-arrow" onclick="window.location.href='index.html'" style="position: absolute; bottom: 50px; left: 50%; transform: translateX(-50%); z-index: 1001; cursor: pointer; display: flex; align-items: center; gap: 8px; color: #f8fafc; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease;">
+            <span style="font-size: 1.1rem;">←</span>
+            <span>Back to Home</span>
+        </div>
+        
+        <style>
+        .back-arrow:hover {
+            transform: translateX(-50%) scale(1.05);
+            color: #3b82f6;
+        }
+        </style>
+        
+        <div class="hero-sectors">
+            <div class="hero-sector-card hyperportal-card" onclick="window.location.href='mass-transit.html'" style="background-image: url('images/mass-transit-hero.jpg'); background-size: cover; background-position: center;">
+                <h3 class="hyperportal-heading">Mass-Transit<br>& Fleets</h3>
+                <div class="sector-arrow">
+                    <div class="arrow-line"></div>
+                    <div class="arrow-head">→</div>
+                    <span class="read-more hyperportal-text">Read More</span>
+                </div>
+            </div>
+            <div class="hero-sector-card hyperportal-card" onclick="window.location.href='manufacturing.html'">
+                <h3 class="hyperportal-heading">Manufacturing</h3>
+                <div class="sector-arrow">
+                    <div class="arrow-line"></div>
+                    <div class="arrow-head">→</div>
+                    <span class="read-more hyperportal-text">Read More</span>
+                </div>
+            </div>
+            <div class="hero-sector-card hyperportal-card" onclick="window.location.href='wholesale-trade.html'">
+                <h3 class="hyperportal-heading">Wholesale & Trade</h3>
+                <div class="sector-arrow">
+                    <div class="arrow-line"></div>
+                    <div class="arrow-head">→</div>
+                    <span class="read-more hyperportal-text">Read More</span>
+                </div>
+            </div>
+            <div class="hero-sector-card hyperportal-card" onclick="window.location.href='structural.html'">
+                <h3 class="hyperportal-heading">Structural</h3>
+                <div class="sector-arrow">
+                    <div class="arrow-line"></div>
+                    <div class="arrow-head">→</div>
+                    <span class="read-more hyperportal-text">Read More</span>
+                </div>
+            </div>
+            <div class="hero-sector-card hyperportal-card" onclick="window.location.href='marine.html'">
+                <h3 class="hyperportal-heading">Marine</h3>
+                <div class="sector-arrow">
+                    <div class="arrow-line"></div>
+                    <div class="arrow-head">→</div>
+                    <span class="read-more hyperportal-text">Read More</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const centerCard = document.querySelector('.hero-sector-card:nth-child(3)');
+    const heroLogo = document.querySelector('.hero-logo');
+    
+    if (centerCard && heroLogo) {
+        centerCard.addEventListener('mouseenter', function() {
+            heroLogo.classList.add('center-hovered');
+        });
+        
+        centerCard.addEventListener('mouseleave', function() {
+            heroLogo.classList.remove('center-hovered');
+        });
+    }
+});
+</script>

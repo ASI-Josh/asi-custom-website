@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hyperglass - Premium Glass Solutions</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        /* HyperPortal Theme Override for Navigation */
+        .hyperportal-navbar {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+            will-change: transform;
+        }
+        
+        .hyperportal-navbar a {
+            color: #f8fafc !important;
+            font-weight: bold !important;
+            text-decoration: none !important;
+            opacity: 1 !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .hyperportal-navbar a:hover {
+            color: #3b82f6 !important;
+            transform: translateY(-1px);
+        }
+        
+        body {
+            padding-top: 80px;
+        }
+        
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(10px);
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+            z-index: 1001;
+            border-radius: 8px;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            top: 100%;
+            left: 0;
+            margin-top: 0px;
+            padding-top: 5px;
+        }
+        
+        .dropdown-content a {
+            color: #f8fafc !important;
+            padding: 12px 16px !important;
+            text-decoration: none !important;
+            display: block !important;
+            font-weight: bold !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .dropdown-content a:hover {
+            background: rgba(59, 130, 246, 0.1) !important;
+            color: #3b82f6 !important;
+            transform: none !important;
+        }
+        
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
+        }
+        
+        .dropdown-arrow {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* HyperPortal Theme Override - REMOVE BACKGROUND EFFECT */
+        .hyperportal-theme {
+            background: #0a0a0a;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        /* REMOVE this entire section - it's causing the lag */
+        .hyperportal-theme::before {
+            display: none;
+        }
+        
+        /* REMOVE this too - the gradient background effect */
+        .hyperportal-theme::after {
+            display: none;
+        }
+        
+        .hyperportal-card {
+            background: rgba(15, 23, 42, 0.6);
+            /* REDUCED blur from 16px to 8px for better performance */
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+            /* Add hardware acceleration */
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        .hyperportal-card:hover {
+            border-color: rgba(128, 128, 128, 0.6);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+        }
+        
+        /* Hero sector cards - rectangular with no curved corners */
+        .hero-sector-card.hyperportal-card {
+            border-radius: 0 !important;
+            /* Optimize background images */
+            background-attachment: scroll; /* Instead of fixed */
+        }
+
+        .hyperportal-text {
+            color: rgba(248, 250, 252, 0.9);
+        }
+        
+        .hyperportal-heading {
+            color: #f8fafc;
+            font-weight: 600;
+        }
+        
+        .hyperportal-navbar {
+            background: rgba(15, 23, 42, 0.95);
+            /* REDUCED blur from 20px to 10px */
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+            /* Hardware acceleration */
+            will-change: transform;
+        }
+        
+        .hyperportal-navbar.show {
+            transform: translateY(0);
+        }
+        
+        .hyperportal-navbar .nav-links a {
+            color: #f8fafc !important;
+            font-weight: 500 !important;
+            text-decoration: none !important;
+            opacity: 1 !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .hyperportal-navbar .nav-links a:hover {
+            color: #3b82f6 !important;
+            transform: translateY(-1px);
+        }
+        
+        .hyperportal-navbar .login-btn {
+            color: #f8fafc !important;
+            font-weight: 600 !important;
+            opacity: 1 !important;
+            background: rgba(59, 130, 246, 0.2) !important;
+            border: 1px solid rgba(59, 130, 246, 0.4) !important;
+            border-radius: 8px !important;
+            padding: 8px 16px !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .hyperportal-navbar .login-btn:hover {
+            background: rgba(59, 130, 246, 0.3) !important;
+            border-color: rgba(59, 130, 246, 0.6) !important;
+            transform: translateY(-1px);
+        }
+        
+        body {
+            padding-top: 0;
+        }
+    </style>
+</head>
+<body class="hyperportal-theme">
+    <!-- Navigation -->
+    <nav class="navbar hyperportal-navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
+      <div style="flex: 1;"></div>
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <a href="index.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Home</a>
+        <div class="dropdown">
+          <a href="sectors.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important; display: flex; align-items: center;">
+            Sectors
+            <span class="dropdown-arrow" style="font-size: 16px; font-weight: bold;">^</span>
+          </a>
+          <div class="dropdown-content">
+            <a href="mass-transit.html" style="font-weight: bold;">Mass Transit & Fleet</a>
+            <a href="manufacturing.html" style="font-weight: bold;">Manufacturing</a>
+            <a href="wholesale-trade.html" style="font-weight: bold;">Wholesale & Trade</a>
+            <a href="structural.html" style="font-weight: bold;">Structural</a>
+            <a href="marine.html" style="font-weight: bold;">Marine</a>
+          </div>
+        </div>
+        <a href="https://hyperportal.online" target="_blank" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Hyperportal</a>
+        <div style="margin: 0 30px;">
+          <img src="images/hyperglass-logo.png" alt="Hyperglass Logo" class="nav-logo-img">
+        </div>
+        <a href="apeax/index.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Apeax Australia</a>
+        <a href="contact.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">Contact</a>
+        <a href="about.html" style="font-weight: bold; color: #f8fafc !important; text-decoration: none !important;">About Us</a>
+      </div>
+      <div style="flex: 1; display: flex; justify-content: flex-end;">
+        <a href="https://hyperportal.online" target="_blank" style="background: linear-gradient(135deg, #ff8c00, #ff6b00); color: white !important; padding: 14px 28px; border-radius: 25px; text-decoration: none !important; font-weight: bold; font-size: 1rem; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3); border: none;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(255, 140, 0, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(255, 140, 0, 0.3)'">
+          HYPERPORTAL
+        </a>
+      </div>
+    </nav>
+
+    <section class="hero">
+        <!-- Independent logo floating above everything -->
+        <div class="hero-logo">
+            <img src="images/hyperglass-logo.png" alt="Hyperglass Logo" class="hero-logo-img">
+        </div>
+        
+        <div class="hero-sectors">
+            <div class="hero-sector-card hyperportal-card" onclick="window.location.href='mass-transit.html'" style="background-image: url('images/mass-transit-hero.jpg'); background-size: cover; background-position: center;">
+                <h3 class="hyperportal-heading">Mass-Transit<br>& Fleets</h3>
+                <div class="sector-arrow">
+                    <div class="arrow-line"></div>
+                    <div class="arrow-head">→</div>
+                    <span class="read-more hyperportal-text">Read More</span>
+                </div>
+            </div>
+            <div class="hero-sector-card hyperportal-card" onclick="window.location.href='manufacturing.html'">
+                <h3 class="hyperportal-heading">Manufacturing</h3>
+                <div class="sector-arrow">
+                    <div class="arrow-line"></div>
+                    <div class="arrow-head">→</div>
+                    <span class="read-more hyperportal-text">Read More</span>
+                </div>
+            </div>
+            <div class="hero-sector-card hyperportal-card" onclick="window.location.href='wholesale-trade.html'">
+                <h3 class="hyperportal-heading">Wholesale & Trade</h3>
+                <div class="sector-arrow">
+                    <div class="arrow-line"></div>
+                    <div class="arrow-head">→</div>
+                    <span class="read-more hyperportal-text">Read More</span>
+                </div>
+            </div>
+            <div class="hero-sector-card hyperportal-card" onclick="window.location.href='structural.html'">
+                <h3 class="hyperportal-heading">Structural</h3>
+                <div class="sector-arrow">
+                    <div class="arrow-line"></div>
+                    <div class="arrow-head">→</div>
+                    <span class="read-more hyperportal-text">Read More</span>
+                </div>
+            </div>
+            <div class="hero-sector-card hyperportal-card" onclick="window.location.href='marine.html'">
+                <h3 class="hyperportal-heading">Marine</h3>
+                <div class="sector-arrow">
+                    <div class="arrow-line"></div>
+                    <div class="arrow-head">→</div>
+                    <span class="read-more hyperportal-text">Read More</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-hyperglass-section" style="padding: 80px 0; background: white; position: relative; z-index: 1;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <!-- Culture Kings style heading with light grey lines -->
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 2.5rem; color: #2c3e50; font-weight: 600; position: relative; display: inline-block; width: 100%;">
+                    <span style="background: white; padding: 0 30px; position: relative; z-index: 2; display: inline-block;">Why Hyperglass?</span>
+                    <div style="position: absolute; top: 50%; left: 0; right: 0; height: 1px; background: #d3d3d3; z-index: 1;"></div>
+                </h2>
+            </div>
+            
+            <!-- Description content -->
+            <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #2c3e50; margin-bottom: 25px;">
+                    HyperGlass Innovations exists to turn glass from a consumable into a strategic asset.
+                </p>
+                
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #2c3e50; margin-bottom: 25px;">
+                    We engineer high-performance surface solutions that eliminate downtime, extend service life, and deliver compliance-grade clarity across bus fleets, commercial vehicles, and structural assets. From our HydroGuard nanocoatings to our on-site optical remediation and life extension systems, every solution is built to drive performance to the edge.
+                </p>
+                
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #2c3e50; margin-bottom: 25px;">
+                    Our team works alongside fleet operators, OEMs, and asset managers to deploy ISO-certified processes backed by real-time QA, warranty traceability, and digital lifecycle reporting through our HyperPortal platform.
+                </p>
+                
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #2c3e50; font-weight: 600;">
+                    We're not here to replace what works. We're here to make it last longer, shine harder, and perform smarter.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hyperportal section removed as requested -->
+
+    <!-- Product Line Hero Banner Section -->
+    <section style="position: relative; height: 900px; background-image: url('images/apeaxtruckimage1.jpeg'); background-size: cover; background-position: center; background-attachment: scroll; background-repeat: no-repeat; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <!-- Blurred background overlay -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('images/apeaxtruckimage1.jpeg'); background-size: cover; background-position: center; filter: blur(2px); z-index: 0;"></div>
+        <!-- Dark vignette overlay -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 30%, rgba(0,0,0,0.4) 70%, rgba(0,0,0,0.7) 100%); z-index: 1;"></div>
+        <!-- Content container -->
+        <div style="position: relative; z-index: 2; text-align: center; color: white; max-width: 800px; padding: 0 20px;">
+            <!-- Apeax Australia White Logo -->
+            <div style="margin-bottom: -20px;">
+                <img src="apeax/apeaxaussurfaceprotection.png" alt="Apeax Australia Surface Protection Logo" style="height: 400px; width: auto; filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.8));">
+            </div>
+            <h2 style="font-size: 3rem; font-weight: 700; margin-bottom: 5px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); color: #CCFF00;">Our Product Lines</h2>
+            <p style="font-size: 1.3rem; line-height: 1.4; margin-bottom: 10px; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+                Discover our comprehensive range of advanced surface protection and optical enhancement solutions designed for commercial and industrial applications.
+            </p>
+        </div>
+    </section>
+
+    <!-- Deep Scratch Remediation Section (matches manufacturing.html) -->
+    <section style="position: relative; height: 800px; background-image: url('images/20250610_112914.jpg'); background-size: cover; background-position: center; background-attachment: scroll; background-repeat: no-repeat; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <!-- Enhanced vignette overlay with brightness reduction -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 30%, rgba(0,0,0,0.25) 70%, rgba(0,0,0,0.45) 100%); z-index: 1;"></div>
+        <!-- Content container -->
+        <div style="position: relative; z-index: 2; text-align: center; color: white; max-width: 1200px; padding: 0 20px; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div style="max-width: 1000px;">
+                <h2 style="font-size: 4rem; font-weight: 700; margin-bottom: 60px; color: #ff9500; letter-spacing: 2px; text-shadow: 2px 0 0 #285280, -2px 0 0 #285280, 0 2px 0 #285280, 0 -2px 0 #285280, 1.5px 1.5px 0 #285280, -1.5px 1.5px 0 #285280, 1.5px -1.5px 0 #285280, -1.5px -1.5px 0 #285280;">DEEP SCRATCH REMEDIATION</h2>
+                <p style="font-size: 1.3rem; line-height: 1.6; margin-bottom: 30px; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); color: rgba(255,255,255,0.9);">
+                    At HyperGlass, we specialise in precision glass scratch remediation for vehicles, buses, marine vessels and architectural installations. Our expert technicians employ industry-leading techniques and ISO-aligned processes to eradicate surface blemishes without distortion. From windscreen repairs to large-format glazing to manufacturing line glass, we restore optical clarity, enhance safety and extend asset life, delivering flawless, showroom-quality results every time.
+                </p>
+            </div>
+        </div>
+        <style>
+        button:hover {
+            background: rgba(204, 255, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(204, 255, 0, 0.3);
+            transform: translateY(-2px);
+        }
+        </style>
+    </section>
+    <footer class="footer" style="background: rgba(15, 23, 42, 0.95); margin-top: 0; border-top: none; padding-top: 0;">
+        <div style="width: 100%; padding: 32px 0 24px 0; display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 32px;">
+            <div style="flex: 1; height: 2px; background: linear-gradient(to right, transparent 0%, #ff9500 100%); max-width: 40%;"></div>
+            <div style="flex: none; display: flex; align-items: center; justify-content: center;">
+                <img src="images/hyperglass-logo.png" alt="Hyperglass Logo" style="height: 120px; width: auto; display: block;">
+            </div>
+            <div style="flex: 1; height: 2px; background: linear-gradient(to left, transparent 0%, #ff9500 100%); max-width: 40%;"></div>
+        </div>
+        <div class="footer-content" style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; gap: 40px; max-width: 1600px; margin: 0 auto; width: 100%;">
+            <div class="footer-section" style="flex: 1 1 420px; min-width: 320px; max-width: 520px; margin-right: 64px; display: flex; flex-direction: column; align-items: flex-start;">
+                <h3>Hyperglass</h3>
+                <p style="margin-bottom: 0; max-width: 420px; line-height: 1.7;">
+                    Hyperglass Innovations is Australia's emerging specialist in automotive, structural & Marine<br>
+                    glass life-extension & protection, performance enhancement and surface remediation.
+                </p>
+            </div>
+            <div class="footer-section" style="flex: 1 1 200px; min-width: 180px;">
+                <h3>Sectors</h3>
+                <ul>
+                    <li><a href="mass-transit.html">Mass Transit & Fleet</a></li>
+                    <li><a href="manufacturing.html">Manufacturing</a></li>
+                    <li><a href="wholesale-trade.html">Wholesale & Trade</a></li>
+                    <li><a href="structural.html">Structural</a></li>
+                    <li><a href="marine.html">Marine</a></li>
+                </ul>
+            </div>
+            <div class="footer-section" style="flex: 1 1 220px; min-width: 200px;">
+                <h3>Products</h3>
+                <ul>
+                    <li>XTREME | OptiShield™</li>
+                    <li>XTREME | PaintShield™</li>
+                    <li>XTREME | RadShield™</li>
+                    <li>XTREME | GrafShield™</li>
+                    <li>XTREME | ClearShield™</li>
+                </ul>
+            </div>
+            <div class="footer-section" style="flex: 1 1 160px; min-width: 140px;">
+                <h3>More</h3>
+                <ul>
+                    <li><a href="apeax/index.html">Apeax Australia</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Hyperglass Innovations Pty Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+<script>
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.hyperportal-navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('show');
+    } else {
+        navbar.classList.remove('show');
+    }
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const centerCard = document.querySelector('.hero-sector-card:nth-child(3)');
+    const heroLogo = document.querySelector('.hero-logo');
+    
+    if (centerCard && heroLogo) {
+        centerCard.addEventListener('mouseenter', function() {
+            heroLogo.classList.add('center-hovered');
+        });
+        
+        centerCard.addEventListener('mouseleave', function() {
+            heroLogo.classList.remove('center-hovered');
+        });
+    }
+});
+</script>
