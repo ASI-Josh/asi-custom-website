@@ -349,12 +349,12 @@ h2 {
 }
 
 /* ===== HYPERPORTAL ===== */
-.hyperportal-section {
+.asiportal-section {
     text-align: center;
     margin: 50px 0;
 }
 
-.hyperportal-btn {
+.asiportal-btn {
     background: #3498db;
     color: white;
     padding: 15px 30px;
@@ -1397,7 +1397,7 @@ a.sector-title-link h3 {
 }
 
 /* HyperPortal-style background enhancements */
-.hyperportal-bg {
+.asiportal-bg {
     background: radial-gradient(circle at 20% 80%, rgba(52,152,219,0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(155,89,182,0.1) 0%, transparent 50%),
                 radial-gradient(circle at 40% 40%, rgba(46,204,113,0.05) 0%, transparent 50%);
@@ -1501,19 +1501,19 @@ html {
 }
 
 /* Grid pattern enhancement */
-.hyperportal-bg > div:first-child {
+.asiportal-bg > div:first-child {
     animation: float 20s linear infinite;
 }
 
 /* HyperPortal Theme Override */
-.hyperportal-theme {
+.asiportal-theme {
     background: #0a0a0a;
     min-height: 100vh;
     position: relative;
 }
 
 /* REMOVED - This was causing lag
-.hyperportal-theme::before {
+.asiportal-theme::before {
     content: '';
     position: fixed;
     top: 0;
@@ -1530,7 +1530,7 @@ html {
 }
 */
 
-.hyperportal-card {
+.asiportal-card {
     background: rgba(15, 23, 42, 0.6);
     backdrop-filter: blur(16px);
     border: 1px solid rgba(148, 163, 184, 0.2);
@@ -1540,21 +1540,21 @@ html {
     transition: all 0.3s ease;
 }
 
-.hyperportal-card:hover {
+.asiportal-card:hover {
     border-color: rgba(59, 130, 246, 0.4);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
 }
 
 /* Hero sector cards - rectangular with no curved corners */
-.hero-sector-card.hyperportal-card {
+.hero-sector-card.asiportal-card {
     border-radius: 0 !important; /* Remove curved corners */
 }
 
-.hyperportal-text {
+.asiportal-text {
     color: rgba(248, 250, 252, 0.9);
 }
 
-.hyperportal-heading {
+.asiportal-heading {
     color: #f8fafc;
     font-weight: 600;
 }
@@ -1567,11 +1567,11 @@ html {
 }
 
 /* Re-enable only essential ones */
-.hyperportal-navbar {
+.asiportal-navbar {
     backdrop-filter: blur(5px) !important;
 }
 
-.hyperportal-navbar {
+.asiportal-navbar {
     background: rgba(15, 23, 42, 0.95);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(148, 163, 184, 0.3);
@@ -1585,7 +1585,7 @@ html {
 }
 
 /* Show navbar when scrolling */
-.hyperportal-navbar.show {
+.asiportal-navbar.show {
     transform: translateY(0);
 }
 
