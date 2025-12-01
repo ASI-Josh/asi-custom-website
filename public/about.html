@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>About Us - Hyperglass</title>
+    <title>About Us - ASI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
     <style>
-        /* HyperPortal Theme Override for Navigation */
-        .hyperportal-navbar {
+        /* ASIPortal Theme Override for Navigation */
+        .asiportal-navbar {
+            position: fixed;
             background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(148, 163, 184, 0.3);
@@ -21,7 +22,7 @@
             will-change: transform;
         }
         
-        .hyperportal-navbar a {
+        .asiportal-navbar a {
             color: #f8fafc !important;
             font-weight: bold !important;
             text-decoration: none !important;
@@ -29,7 +30,7 @@
             transition: all 0.3s ease !important;
         }
         
-        .hyperportal-navbar a:hover {
+        .asiportal-navbar a:hover {
             color: #3b82f6 !important;
             transform: translateY(-1px);
         }
@@ -174,7 +175,7 @@
                         <!-- Glass Remediation & Life-Extension Solutions -->
                         <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 40px; border-radius: 16px; border-top: 6px solid #f39c12; box-shadow: 0 8px 32px rgba(0,0,0,0.1); border-left: 1px solid rgba(255,255,255,0.2); border-right: 1px solid rgba(255,255,255,0.2); border-bottom: 1px solid rgba(255,255,255,0.2); min-height: 560px; display: flex; flex-direction: column;">
                             <h3 style="color: #2c3e50; font-size: 1.4rem; font-weight: 600; margin: 0 0 20px 0; text-align: center; height: 40px; display: flex; align-items: center; justify-content: center;">Glass Remediation & Life-Extension Solutions</h3>
-                            <p style="color: #2c3e50; line-height: 1.6; margin: 0 0 20px 0; font-size: 1rem; text-align: center;">All Hyperglass Technicians follow an Advanced, multi-stage nano-abrasive polishing and clearing process that remediates deep-scratches, micro-fissures, swirl marks and hazing to restore OEM-grade optical clarity.</p>
+                            <p style="color: #2c3e50; line-height: 1.6; margin: 0 0 20px 0; font-size: 1rem; text-align: center;">All ASI Technicians follow an Advanced, multi-stage nano-abrasive polishing and clearing process that remediates deep-scratches, micro-fissures, swirl marks and hazing to restore OEM-grade optical clarity.</p>
                             <ul style="color: #2c3e50; font-size: 0.9rem; line-height: 1.5; margin: 0; padding-left: 20px; text-align: left;">
                                 <li style="margin-bottom: 12px;"><strong>Chip & Crack Repairs:</strong> Precision resin injection to stabilise damage, prevent spread & minimize light refraction.</li>
                                 <li style="margin-bottom: 12px;"><strong>Deep Scratch & Swirl-Mark Removal:</strong> Multi-stage nano-abrasive polishing to recover factory-clear finish without affecting optical clarity.</li>
@@ -250,7 +251,12 @@
 
 
     <!-- Partnership & Innovation Section - Full Width -->
-    <section style="background: #1a1a1a url('images/H.png') no-repeat center center; background-size: 500px 500px; padding: 100px 0; position: relative; overflow: hidden; width: 100vw; margin-left: calc(-50vw + 50%);">
+    <section style="background: #1a1a1a; padding: 100px 0; position: relative; overflow: hidden; width: 100vw; margin-left: calc(-50vw + 50%);">
+        
+        <!-- ASI Logo Background - Dimmed -->
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: 500px; pointer-events: none; opacity: 0.15;">
+            <img src="images/asi-logo.png" alt="" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
         
         <!-- Simplified Background Pattern -->
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.05;">
@@ -302,14 +308,31 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="sector-cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Partner with Innovation?</h2>
-                <p>Discover how Hyperglass Innovations can transform your glass care approach with cutting-edge solutions and unmatched expertise.</p>
-                <div class="cta-buttons">
-                    <a href="contact.html" class="cta-btn primary">Contact Us</a>
-                    <a href="https://hyperportal.online" target="_blank" class="cta-btn secondary">Access ASIPortal™</a>
+    <section style="background: #1a1a1a; padding: 100px 0; position: relative; overflow: hidden;">
+        
+        <!-- Background Pattern -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.05;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 50px 50px;"></div>
+        </div>
+
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2;">
+            <div style="background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); padding: 60px; border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); text-align: center; position: relative; overflow: hidden;">
+                
+                
+                <!-- ASI Logo -->
+                <div style="margin-bottom: 40px;">
+                    <img src="images/asi-logo.png" alt="ASI Logo" style="height: 145px; filter: brightness(1.2); object-fit: contain; object-position: center; background: transparent; padding: 0; margin: 0; display: block; margin-left: auto; margin-right: auto;">
+                </div>
+                
+                <h2 style="color: white; font-size: 2.5rem; font-weight: 700; margin-bottom: 40px; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Ready to Partner with ASI?</h2>
+                
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" style="background: linear-gradient(135deg, #1e3c72, #2a5298); color: white !important; padding: 16px 32px; border-radius: 25px; text-decoration: none !important; font-weight: bold; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(30, 60, 114, 0.3); border: none;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(30, 60, 114, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(30, 60, 114, 0.3)'">
+                        Contact Us
+                    </a>
+                    <a href="https://hyperportal.online" target="_blank" style="background: linear-gradient(135deg, #ff8c00, #ff6b00); color: white !important; padding: 16px 32px; border-radius: 25px; text-decoration: none !important; font-weight: bold; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3); border: none;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(255, 140, 0, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(255, 140, 0, 0.3)'">
+                        ASIPortal™
+                    </a>
                 </div>
             </div>
         </div>
@@ -362,7 +385,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Hyperglass Innovations Pty Ltd. All rights reserved.</p>
+            <p>&copy; 2024 Advanced Surface Innovations Pty Ltd. All rights reserved.</p>
         </div>
     </footer>
 </body>
