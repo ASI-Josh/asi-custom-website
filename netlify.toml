@@ -1,0 +1,4 @@
+[build]
+  # No base directory needed - build from repo root
+  publish = "public"
+  # No build command needed for static HTML site
